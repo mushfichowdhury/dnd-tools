@@ -22,6 +22,24 @@ const emptyPartyForm = {
 	hitPointsTotal: "",
 };
 
+const THEME_STORAGE_KEY = "dnd-combat-tracker-theme";
+
+const getPreferredTheme = () => {
+	if (typeof window === "undefined") {
+		return "dark";
+	}
+
+	const storedTheme = window.localStorage.getItem(THEME_STORAGE_KEY);
+
+	if (storedTheme === "light" || storedTheme === "dark") {
+		return storedTheme;
+	}
+
+	return window.matchMedia("(prefers-color-scheme: dark)").matches
+		? "dark"
+		: "light";
+};
+
 const parseManualPartyHitPoints = (currentValue, totalValue) => {
 	const parseValue = (value) => {
 		if (typeof value !== "string") {
@@ -492,6 +510,7 @@ const buildStatusFromCharacterConditions = (conditions) => {
 };
 
 export default function Home() {
+	const [theme, setTheme] = useState("dark");
 	const [partyMembers, setPartyMembers] = useState([]);
 	const [enemies, setEnemies] = useState([]);
 	const [expandedEnemyNotes, setExpandedEnemyNotes] = useState({});
@@ -513,6 +532,17 @@ export default function Home() {
 	const [combatStatuses, setCombatStatuses] = useState({});
 	const [roundCounter, setRoundCounter] = useState(1);
 	const [concentrationReminder, setConcentrationReminder] = useState(null);
+
+	useEffect(() => {
+		const preferredTheme = getPreferredTheme();
+		setTheme(preferredTheme);
+		document.documentElement.dataset.theme = preferredTheme;
+	}, []);
+
+	useEffect(() => {
+		document.documentElement.dataset.theme = theme;
+		window.localStorage.setItem(THEME_STORAGE_KEY, theme);
+	}, [theme]);
 
 	useEffect(() => {
 		const searchTerm = monsterSearch.trim();
@@ -1664,7 +1694,21 @@ export default function Home() {
 			<div className={styles.page}>
 				<main className={styles.main}>
 					<header className={styles.header}>
-						<h1>Dungeons &amp; Dragons Combat Tracker</h1>
+						<div className={styles.headerTop}>
+							<h1>Dungeons &amp; Dragons Combat Tracker</h1>
+							<button
+								className={styles.themeToggle}
+								type='button'
+								onClick={() =>
+									setTheme((currentTheme) =>
+										currentTheme === "dark" ? "light" : "dark"
+									)
+								}
+								aria-pressed={theme === "light"}
+							>
+								{theme === "dark" ? "Light mode" : "Dark mode"}
+							</button>
+						</div>
 						<p>
 							Keep your battles organized by capturing party initiatives, enemy
 							statblocks, and cycling through turn order.
