@@ -26,6 +26,7 @@ type HordeGroup = {
   title: string;
   description: string;
   monsters: Monster[];
+  role: MonsterRole | 'Any';
 };
 
 const TERRAIN_OPTIONS = [
@@ -41,6 +42,9 @@ const TERRAIN_OPTIONS = [
   'Volcanic'
 ];
 
+const monsterImage = (name: string) =>
+  `https://placehold.co/600x800/1b1d2b/f2f2f8?text=${encodeURIComponent(name)}`;
+
 const MONSTERS: Monster[] = [
   {
     name: 'Ancient Black Dragon',
@@ -48,7 +52,7 @@ const MONSTERS: Monster[] = [
     role: 'Leader',
     terrains: ['Swamp', 'Coastal'],
     themes: ['dragon', 'acid', 'tyranny'],
-    image: 'https://www.dndbeyond.com/avatars/thumbnails/0/6/280/315/636252762635640751.jpeg',
+    image: monsterImage('Ancient Black Dragon'),
     source: 'Monster Manual'
   },
   {
@@ -57,7 +61,7 @@ const MONSTERS: Monster[] = [
     role: 'Leader',
     terrains: ['Urban', 'Underdark', 'Forest'],
     themes: ['undead', 'necromancy', 'arcane'],
-    image: 'https://www.dndbeyond.com/avatars/thumbnails/0/43/280/315/636252762712251078.jpeg',
+    image: monsterImage('Lich'),
     source: 'Monster Manual'
   },
   {
@@ -66,7 +70,7 @@ const MONSTERS: Monster[] = [
     role: 'Leader',
     terrains: ['Underdark', 'Urban'],
     themes: ['aberration', 'tyrant'],
-    image: 'https://www.dndbeyond.com/avatars/thumbnails/0/15/280/315/636252762642535978.jpeg',
+    image: monsterImage('Beholder'),
     source: 'Monster Manual'
   },
   {
@@ -75,7 +79,7 @@ const MONSTERS: Monster[] = [
     role: 'Leader',
     terrains: ['Underdark'],
     themes: ['drow', 'cult', 'shadow'],
-    image: 'https://www.dndbeyond.com/avatars/thumbnails/30735/956/280/315/638040557965574611.png',
+    image: monsterImage('Drow Matron Mother'),
     source: 'Mordenkainen Presents: Monsters of the Multiverse'
   },
   {
@@ -84,7 +88,7 @@ const MONSTERS: Monster[] = [
     role: 'Leader',
     terrains: ['Underdark', 'Urban'],
     themes: ['aberration', 'psionics'],
-    image: 'https://www.dndbeyond.com/avatars/thumbnails/0/125/280/315/636252762828745249.jpeg',
+    image: monsterImage('Mind Flayer Arcanist'),
     source: 'Monster Manual'
   },
   {
@@ -93,7 +97,7 @@ const MONSTERS: Monster[] = [
     role: 'Leader',
     terrains: ['Mountain', 'Volcanic'],
     themes: ['giant', 'fire', 'war'],
-    image: 'https://www.dndbeyond.com/avatars/thumbnails/30835/97/280/315/638063877516876355.png',
+    image: monsterImage('Fire Giant Dreadnought'),
     source: 'Volo\'s Guide to Monsters'
   },
   {
@@ -102,7 +106,7 @@ const MONSTERS: Monster[] = [
     role: 'General',
     terrains: ['Urban', 'Forest', 'Grassland'],
     themes: ['undead', 'holy', 'war'],
-    image: 'https://www.dndbeyond.com/avatars/thumbnails/0/56/280/315/636252762736657951.jpeg',
+    image: monsterImage('Death Knight'),
     source: 'Dungeon Master\'s Guide'
   },
   {
@@ -111,7 +115,7 @@ const MONSTERS: Monster[] = [
     role: 'General',
     terrains: ['Underdark', 'Forest'],
     themes: ['drow', 'shadow'],
-    image: 'https://www.dndbeyond.com/avatars/thumbnails/0/263/280/315/636252763190492989.jpeg',
+    image: monsterImage('Drow Elite Warrior'),
     source: 'Monster Manual'
   },
   {
@@ -120,7 +124,7 @@ const MONSTERS: Monster[] = [
     role: 'General',
     terrains: ['Grassland', 'Forest', 'Urban'],
     themes: ['goblinoid', 'war'],
-    image: 'https://www.dndbeyond.com/avatars/thumbnails/0/239/280/315/636252763146663668.jpeg',
+    image: monsterImage('Hobgoblin Warlord'),
     source: 'Monster Manual'
   },
   {
@@ -129,7 +133,7 @@ const MONSTERS: Monster[] = [
     role: 'General',
     terrains: ['Swamp', 'Forest'],
     themes: ['yuan-ti', 'cult', 'poison'],
-    image: 'https://www.dndbeyond.com/avatars/thumbnails/30862/849/280/315/638070090466353951.png',
+    image: monsterImage('Yuan-ti Pit Master'),
     source: 'Mordenkainen Presents: Monsters of the Multiverse'
   },
   {
@@ -138,7 +142,7 @@ const MONSTERS: Monster[] = [
     role: 'General',
     terrains: ['Mountain', 'Underdark'],
     themes: ['giant', 'dream', 'stone'],
-    image: 'https://www.dndbeyond.com/avatars/thumbnails/30833/798/280/315/638063833352868512.png',
+    image: monsterImage('Stone Giant Dreamwalker'),
     source: 'Volo\'s Guide to Monsters'
   },
   {
@@ -147,7 +151,7 @@ const MONSTERS: Monster[] = [
     role: 'Knight',
     terrains: ['Urban', 'Grassland', 'Coastal'],
     themes: ['martial', 'arena'],
-    image: 'https://www.dndbeyond.com/avatars/thumbnails/0/51/280/315/636252762726422473.jpeg',
+    image: monsterImage('Gladiator'),
     source: 'Monster Manual'
   },
   {
@@ -156,7 +160,7 @@ const MONSTERS: Monster[] = [
     role: 'Knight',
     terrains: ['Grassland', 'Forest', 'Urban'],
     themes: ['goblinoid', 'war'],
-    image: 'https://www.dndbeyond.com/avatars/thumbnails/0/234/280/315/636252763138787984.jpeg',
+    image: monsterImage('Hobgoblin Captain'),
     source: 'Monster Manual'
   },
   {
@@ -165,7 +169,7 @@ const MONSTERS: Monster[] = [
     role: 'Knight',
     terrains: ['Urban', 'Grassland', 'Mountain'],
     themes: ['martial', 'mercenary'],
-    image: 'https://www.dndbeyond.com/avatars/thumbnails/0/310/280/315/636252763269837809.jpeg',
+    image: monsterImage('Veteran'),
     source: 'Monster Manual'
   },
   {
@@ -174,7 +178,7 @@ const MONSTERS: Monster[] = [
     role: 'Knight',
     terrains: ['Forest', 'Swamp', 'Urban'],
     themes: ['undead', 'necromancy'],
-    image: 'https://www.dndbeyond.com/avatars/thumbnails/0/311/280/315/636252763271217675.jpeg',
+    image: monsterImage('Wight'),
     source: 'Monster Manual'
   },
   {
@@ -183,7 +187,7 @@ const MONSTERS: Monster[] = [
     role: 'Knight',
     terrains: ['Swamp', 'Forest', 'Underdark'],
     themes: ['yuan-ti', 'cult', 'poison'],
-    image: 'https://www.dndbeyond.com/avatars/thumbnails/0/362/280/315/636252763403012402.jpeg',
+    image: monsterImage('Yuan-ti Malison'),
     source: 'Monster Manual'
   },
   {
@@ -192,7 +196,7 @@ const MONSTERS: Monster[] = [
     role: 'Pawn',
     terrains: ['Urban', 'Forest', 'Underdark'],
     themes: ['cult', 'arcane'],
-    image: 'https://www.dndbeyond.com/avatars/thumbnails/0/206/280/315/636252763038977249.jpeg',
+    image: monsterImage('Cult Fanatic'),
     source: 'Monster Manual'
   },
   {
@@ -201,7 +205,7 @@ const MONSTERS: Monster[] = [
     role: 'Pawn',
     terrains: ['Grassland', 'Forest', 'Urban', 'Coastal'],
     themes: ['bandit', 'mercenary'],
-    image: 'https://www.dndbeyond.com/avatars/thumbnails/0/15/280/315/636252762643897199.jpeg',
+    image: monsterImage('Bandit'),
     source: 'Monster Manual'
   },
   {
@@ -210,7 +214,7 @@ const MONSTERS: Monster[] = [
     role: 'Pawn',
     terrains: ['Forest', 'Grassland', 'Underdark'],
     themes: ['goblinoid', 'war'],
-    image: 'https://www.dndbeyond.com/avatars/thumbnails/0/226/280/315/636252763125668167.jpeg',
+    image: monsterImage('Goblin'),
     source: 'Monster Manual'
   },
   {
@@ -219,7 +223,7 @@ const MONSTERS: Monster[] = [
     role: 'Pawn',
     terrains: ['Urban', 'Underdark', 'Desert'],
     themes: ['undead', 'necromancy'],
-    image: 'https://www.dndbeyond.com/avatars/thumbnails/0/292/280/315/636252763242240526.jpeg',
+    image: monsterImage('Skeleton'),
     source: 'Monster Manual'
   },
   {
@@ -228,7 +232,7 @@ const MONSTERS: Monster[] = [
     role: 'Pawn',
     terrains: ['Mountain', 'Underdark', 'Forest'],
     themes: ['dragon', 'goblinoid'],
-    image: 'https://www.dndbeyond.com/avatars/thumbnails/0/254/280/315/636252763175224799.jpeg',
+    image: monsterImage('Kobold'),
     source: 'Monster Manual'
   },
   {
@@ -237,7 +241,7 @@ const MONSTERS: Monster[] = [
     role: 'Pawn',
     terrains: ['Swamp'],
     themes: ['swamp', 'tribal'],
-    image: 'https://www.dndbeyond.com/avatars/thumbnails/0/182/280/315/636252762946602571.jpeg',
+    image: monsterImage('Bullywug'),
     source: 'Monster Manual'
   },
   {
@@ -246,7 +250,7 @@ const MONSTERS: Monster[] = [
     role: 'Pawn',
     terrains: ['Coastal', 'Swamp'],
     themes: ['aquatic', 'brutal'],
-    image: 'https://www.dndbeyond.com/avatars/thumbnails/0/102/280/315/636252762807989089.jpeg',
+    image: monsterImage('Merrow'),
     source: 'Monster Manual'
   },
   {
@@ -255,7 +259,7 @@ const MONSTERS: Monster[] = [
     role: 'Pawn',
     terrains: ['Urban', 'Grassland', 'Forest'],
     themes: ['cult', 'holy'],
-    image: 'https://www.dndbeyond.com/avatars/thumbnails/0/3/280/315/636252762625643574.jpeg',
+    image: monsterImage('Acolyte'),
     source: 'Monster Manual'
   }
 ];
@@ -285,13 +289,13 @@ const crDisplay = (cr: number) => {
   return numberFormatter.format(cr);
 };
 
-const distributeMonsters = (
-  role: MonsterRole,
-  count: number,
+const buildMonsterPool = (
+  role: MonsterRole | 'Any',
   terrain: string,
   themes: string[]
 ) => {
-  const basePool = MONSTERS.filter((monster) => monster.role === role);
+  const basePool =
+    role === 'Any' ? MONSTERS : MONSTERS.filter((monster) => monster.role === role);
   const themedPool = basePool.filter(
     (monster) =>
       monster.terrains.includes(terrain) &&
@@ -302,14 +306,22 @@ const distributeMonsters = (
     themes.some((theme) => monster.themes.includes(theme))
   );
 
-  const pool = themedPool.length
+  return themedPool.length
     ? themedPool
     : terrainPool.length
       ? terrainPool
       : themePool.length
         ? themePool
         : basePool;
+};
 
+const distributeMonsters = (
+  role: MonsterRole | 'Any',
+  count: number,
+  terrain: string,
+  themes: string[]
+) => {
+  const pool = buildMonsterPool(role, terrain, themes);
   return Array.from({ length: count }, (_, index) => pool[index % pool.length]);
 };
 
@@ -325,7 +337,7 @@ export default function Home() {
   const [selection, setSelection] = useState<HordeSelection>(DEFAULT_SELECTION);
   const [generatedGroups, setGeneratedGroups] = useState<HordeGroup[]>([]);
 
-  const leaders = useMemo(() => MONSTERS.filter((monster) => monster.role === 'Leader'), []);
+  const leaders = useMemo(() => MONSTERS, []);
 
   const handleGenerate = () => {
     const themes = uniqueThemesForLeader(selection.leader);
@@ -339,26 +351,68 @@ export default function Home() {
       {
         title: 'Primary Enemy Leader',
         description: 'The core threat and tactical centerpiece of the encounter.',
-        monsters: [leaderMonster]
+        monsters: [leaderMonster],
+        role: 'Any'
       },
       {
         title: `Generals (${selection.generals})`,
         description: 'Strategic lieutenants who bolster the leader and control squads.',
-        monsters: distributeMonsters('General', selection.generals, selection.terrain, themes)
+        monsters: distributeMonsters('General', selection.generals, selection.terrain, themes),
+        role: 'General'
       },
       {
         title: `Knights (${selection.knights})`,
         description: 'Elite combatants that protect objectives and press the attack.',
-        monsters: distributeMonsters('Knight', selection.knights, selection.terrain, themes)
+        monsters: distributeMonsters('Knight', selection.knights, selection.terrain, themes),
+        role: 'Knight'
       },
       {
         title: `Pawns (${selection.pawns})`,
         description: 'Low-CR troops to fill the battlefield and apply pressure.',
-        monsters: distributeMonsters('Pawn', selection.pawns, selection.terrain, themes)
+        monsters: distributeMonsters('Pawn', selection.pawns, selection.terrain, themes),
+        role: 'Pawn'
       }
     ];
 
     setGeneratedGroups(groups);
+  };
+
+  const refreshMonster = (groupIndex: number, monsterIndex: number) => {
+    const themes = uniqueThemesForLeader(selection.leader);
+
+    setGeneratedGroups((current) => {
+      const updated = [...current];
+      const group = updated[groupIndex];
+
+      if (!group) {
+        return current;
+      }
+
+      const pool = buildMonsterPool(group.role, selection.terrain, themes);
+      const currentMonster = group.monsters[monsterIndex];
+      const available = currentMonster
+        ? pool.filter((monster) => monster.name !== currentMonster.name)
+        : pool;
+      const nextMonster =
+        available[Math.floor(Math.random() * available.length)] ?? currentMonster;
+
+      if (!nextMonster) {
+        return current;
+      }
+
+      const nextMonsters = [...group.monsters];
+      nextMonsters[monsterIndex] = nextMonster;
+      updated[groupIndex] = { ...group, monsters: nextMonsters };
+
+      if (group.role === 'Any') {
+        setSelection((currentSelection) => ({
+          ...currentSelection,
+          leader: nextMonster.name
+        }));
+      }
+
+      return updated;
+    });
   };
 
   const totalMonsters = generatedGroups.reduce(
@@ -409,7 +463,7 @@ export default function Home() {
               >
                 {leaders.map((leader) => (
                   <option key={leader.name} value={leader.name}>
-                    {leader.name} (CR {crDisplay(leader.cr)})
+                    {leader.name} ({leader.role}, CR {crDisplay(leader.cr)})
                   </option>
                 ))}
               </select>
@@ -439,13 +493,13 @@ export default function Home() {
                 Generals
                 <input
                   type="number"
-                  min={1}
+                  min={0}
                   max={6}
                   value={selection.generals}
                   onChange={(event) =>
                     setSelection((current) => ({
                       ...current,
-                      generals: Math.max(1, Number(event.target.value))
+                      generals: Math.max(0, Number(event.target.value))
                     }))
                   }
                 />
@@ -454,13 +508,13 @@ export default function Home() {
                 Knights
                 <input
                   type="number"
-                  min={1}
+                  min={0}
                   max={12}
                   value={selection.knights}
                   onChange={(event) =>
                     setSelection((current) => ({
                       ...current,
-                      knights: Math.max(1, Number(event.target.value))
+                      knights: Math.max(0, Number(event.target.value))
                     }))
                   }
                 />
@@ -469,13 +523,13 @@ export default function Home() {
                 Pawns
                 <input
                   type="number"
-                  min={4}
+                  min={0}
                   max={40}
                   value={selection.pawns}
                   onChange={(event) =>
                     setSelection((current) => ({
                       ...current,
-                      pawns: Math.max(4, Number(event.target.value))
+                      pawns: Math.max(0, Number(event.target.value))
                     }))
                   }
                 />
@@ -514,7 +568,7 @@ export default function Home() {
         </div>
 
         <div className="group-list">
-          {generatedGroups.map((group) => (
+          {generatedGroups.map((group, groupIndex) => (
             <article key={group.title} className="group">
               <header>
                 <h3>{group.title}</h3>
@@ -523,7 +577,16 @@ export default function Home() {
               <div className="monster-grid">
                 {group.monsters.map((monster, index) => (
                   <div key={`${monster.name}-${index}`} className="monster-card">
-                    <img src={monster.image} alt={monster.name} />
+                    <div className="monster-image">
+                      <img src={monster.image} alt={monster.name} loading="lazy" />
+                      <button
+                        type="button"
+                        className="refresh-button"
+                        onClick={() => refreshMonster(groupIndex, index)}
+                      >
+                        Refresh
+                      </button>
+                    </div>
                     <div>
                       <h4>{monster.name}</h4>
                       <p>
