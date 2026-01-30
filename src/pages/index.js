@@ -1692,22 +1692,26 @@ export default function Home() {
 				/>
 			</Head>
 			<div className={styles.page}>
+				<button
+					className={styles.themeToggle}
+					type='button'
+					onClick={() =>
+						setTheme((currentTheme) =>
+							currentTheme === "dark" ? "light" : "dark"
+						)
+					}
+					aria-pressed={theme === "light"}
+					aria-label={
+						theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
+					}
+					title={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+				>
+					{theme === "dark" ? "🌞" : "🌙"}
+				</button>
 				<main className={styles.main}>
 					<header className={styles.header}>
 						<div className={styles.headerTop}>
 							<h1>Dungeons &amp; Dragons Combat Tracker</h1>
-							<button
-								className={styles.themeToggle}
-								type='button'
-								onClick={() =>
-									setTheme((currentTheme) =>
-										currentTheme === "dark" ? "light" : "dark"
-									)
-								}
-								aria-pressed={theme === "light"}
-							>
-								{theme === "dark" ? "Light mode" : "Dark mode"}
-							</button>
 						</div>
 						<p>
 							Keep your battles organized by capturing party initiatives, enemy
