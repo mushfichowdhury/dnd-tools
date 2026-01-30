@@ -27,6 +27,13 @@
 	gap: 12px;
 }
 
+.headerTop {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 16px;
+}
+
 .header h1 {
 	font-size: clamp(2.4rem, 4vw, 3rem);
 	font-weight: 700;
@@ -39,6 +46,25 @@
 	margin: 0;
 	line-height: 1.6;
 	color: rgba(246, 239, 227, 0.85);
+}
+
+.themeToggle {
+	border-radius: 999px;
+	border: 1px solid rgba(224, 185, 112, 0.35);
+	background: rgba(36, 25, 16, 0.6);
+	color: #f6efe3;
+	font-weight: 600;
+	padding: 10px 18px;
+	cursor: pointer;
+	transition: border-color 0.2s ease, transform 0.2s ease,
+		box-shadow 0.2s ease;
+	box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+}
+
+.themeToggle:hover,
+.themeToggle:focus-visible {
+	border-color: #d4a373;
+	transform: translateY(-1px);
 }
 
 .section {
@@ -1000,142 +1026,162 @@
 	.combatControls {
 		flex-wrap: wrap;
 	}
+
+	.headerTop {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.themeToggle {
+		width: 100%;
+		text-align: center;
+	}
 }
 
-@media (prefers-color-scheme: light) {
-	.page {
-		background: radial-gradient(circle at top, #f6efe3, #d6c3a1 70%);
-		color: #3a2a1a;
-	}
+:global([data-theme="light"]) .page {
+	background: radial-gradient(circle at top, #f6efe3, #d6c3a1 70%);
+	color: #3a2a1a;
+}
 
-	.main {
-		background: rgba(255, 252, 245, 0.9);
-		box-shadow: 0 20px 60px rgba(58, 42, 26, 0.12);
-	}
+:global([data-theme="light"]) .main {
+	background: rgba(255, 252, 245, 0.9);
+	box-shadow: 0 20px 60px rgba(58, 42, 26, 0.12);
+}
 
-	.section {
-		background: rgba(255, 252, 245, 0.85);
-		border-color: rgba(141, 109, 60, 0.15);
-	}
+:global([data-theme="light"]) .section {
+	background: rgba(255, 252, 245, 0.85);
+	border-color: rgba(141, 109, 60, 0.15);
+}
 
-	.card {
-		background: rgba(255, 252, 245, 0.92);
-		border-color: rgba(141, 109, 60, 0.2);
-	}
+:global([data-theme="light"]) .card {
+	background: rgba(255, 252, 245, 0.92);
+	border-color: rgba(141, 109, 60, 0.2);
+}
 
-	.combatant {
-		background: rgba(255, 252, 245, 0.9);
-	}
+:global([data-theme="light"]) .combatant {
+	background: rgba(255, 252, 245, 0.9);
+}
 
-	.statLine,
-	.sectionDescription,
-	.notes,
-	.combatantDetails,
-	.emptyState {
-		color: rgba(58, 42, 26, 0.7);
-	}
+:global([data-theme="light"]) .statLine,
+:global([data-theme="light"]) .sectionDescription,
+:global([data-theme="light"]) .notes,
+:global([data-theme="light"]) .combatantDetails,
+:global([data-theme="light"]) .emptyState {
+	color: rgba(58, 42, 26, 0.7);
+}
 
-	.primaryButton {
-		box-shadow: 0 10px 30px rgba(182, 92, 44, 0.2);
-	}
+:global([data-theme="light"]) .themeToggle {
+	background: rgba(255, 252, 245, 0.9);
+	color: #3a2a1a;
+	border-color: rgba(141, 109, 60, 0.35);
+	box-shadow: 0 10px 24px rgba(58, 42, 26, 0.15);
+}
 
-	.removeButton {
-		color: #b65c2c;
-		border-color: rgba(182, 92, 44, 0.35);
-	}
+:global([data-theme="light"]) .themeToggle:hover,
+:global([data-theme="light"]) .themeToggle:focus-visible {
+	border-color: rgba(182, 92, 44, 0.55);
+}
 
-	.removeButton:hover {
-		background: rgba(182, 92, 44, 0.08);
-		color: #7c3f1e;
-	}
+:global([data-theme="light"]) .primaryButton {
+	box-shadow: 0 10px 30px rgba(182, 92, 44, 0.2);
+}
 
-	.removeLink {
-		color: #b65c2c;
-	}
+:global([data-theme="light"]) .removeButton {
+	color: #b65c2c;
+	border-color: rgba(182, 92, 44, 0.35);
+}
 
-	.removeLink:hover {
-		color: #7c3f1e;
-	}
+:global([data-theme="light"]) .removeButton:hover {
+	background: rgba(182, 92, 44, 0.08);
+	color: #7c3f1e;
+}
 
-	.enemyHpInput {
-		background: rgba(255, 252, 245, 0.9);
-		color: #3a2a1a;
-		border-color: rgba(141, 109, 60, 0.25);
-	}
+:global([data-theme="light"]) .removeLink {
+	color: #b65c2c;
+}
 
-	.enemyHpInput:focus {
-		border-color: #b65c2c;
-	}
+:global([data-theme="light"]) .removeLink:hover {
+	color: #7c3f1e;
+}
 
-	.expandNotesButton {
-		color: #b65c2c;
-	}
+:global([data-theme="light"]) .enemyHpInput {
+	background: rgba(255, 252, 245, 0.9);
+	color: #3a2a1a;
+	border-color: rgba(141, 109, 60, 0.25);
+}
 
-	.expandNotesButton:hover {
-		color: #7c3f1e;
-	}
+:global([data-theme="light"]) .enemyHpInput:focus {
+	border-color: #b65c2c;
+}
 
-	.enemyDamageInput {
-		background: rgba(255, 252, 245, 0.85);
-		color: #3a2a1a;
-		border-color: rgba(141, 109, 60, 0.35);
-	}
+:global([data-theme="light"]) .expandNotesButton {
+	color: #b65c2c;
+}
 
-	.enemyDamageInput:focus {
-		border-color: rgba(141, 109, 60, 0.55);
-	}
+:global([data-theme="light"]) .expandNotesButton:hover {
+	color: #7c3f1e;
+}
 
-	.enemyDamageButton {
-		border-color: rgba(141, 109, 60, 0.35);
-		background: rgba(212, 163, 115, 0.18);
-		color: #7c3f1e;
-	}
+:global([data-theme="light"]) .enemyDamageInput {
+	background: rgba(255, 252, 245, 0.85);
+	color: #3a2a1a;
+	border-color: rgba(141, 109, 60, 0.35);
+}
 
-	.enemyDamageButton:hover,
-	.enemyDamageButton:focus-visible {
-		border-color: rgba(141, 109, 60, 0.55);
-		background: rgba(212, 163, 115, 0.28);
-	}
+:global([data-theme="light"]) .enemyDamageInput:focus {
+	border-color: rgba(141, 109, 60, 0.55);
+}
 
-	.roundTracker {
-		color: #7c3f1e;
-		background: rgba(182, 92, 44, 0.12);
-		border-color: rgba(182, 92, 44, 0.25);
-	}
+:global([data-theme="light"]) .enemyDamageButton {
+	border-color: rgba(141, 109, 60, 0.35);
+	background: rgba(212, 163, 115, 0.18);
+	color: #7c3f1e;
+}
 
-	.concentrationReminder {
-		background: rgba(212, 163, 115, 0.18);
-		border-color: rgba(182, 92, 44, 0.3);
-		color: #3a2a1a;
-	}
+:global([data-theme="light"]) .enemyDamageButton:hover,
+:global([data-theme="light"]) .enemyDamageButton:focus-visible {
+	border-color: rgba(141, 109, 60, 0.55);
+	background: rgba(212, 163, 115, 0.28);
+}
 
-	.reminderDismiss {
-		border-color: rgba(182, 92, 44, 0.35);
-		background: rgba(212, 163, 115, 0.2);
-		color: #7c3f1e;
-	}
+:global([data-theme="light"]) .roundTracker {
+	color: #7c3f1e;
+	background: rgba(182, 92, 44, 0.12);
+	border-color: rgba(182, 92, 44, 0.25);
+}
 
-	.reminderDismiss:hover,
-	.reminderDismiss:focus-visible {
-		border-color: rgba(182, 92, 44, 0.55);
-		background: rgba(212, 163, 115, 0.32);
-	}
+:global([data-theme="light"]) .concentrationReminder {
+	background: rgba(212, 163, 115, 0.18);
+	border-color: rgba(182, 92, 44, 0.3);
+	color: #3a2a1a;
+}
 
-	.statusSelect {
-		background: rgba(255, 252, 245, 0.9);
-		color: #3a2a1a;
-		border-color: rgba(141, 109, 60, 0.35);
-	}
+:global([data-theme="light"]) .reminderDismiss {
+	border-color: rgba(182, 92, 44, 0.35);
+	background: rgba(212, 163, 115, 0.2);
+	color: #7c3f1e;
+}
 
-	.statusSelect:focus {
-		border-color: rgba(141, 109, 60, 0.55);
-	}
+:global([data-theme="light"]) .reminderDismiss:hover,
+:global([data-theme="light"]) .reminderDismiss:focus-visible {
+	border-color: rgba(182, 92, 44, 0.55);
+	background: rgba(212, 163, 115, 0.32);
+}
 
-	.statusBadge {
-		color: #7c3f1e;
-		background: rgba(182, 92, 44, 0.16);
-		border-color: rgba(182, 92, 44, 0.35);
-	}
+:global([data-theme="light"]) .statusSelect {
+	background: rgba(255, 252, 245, 0.9);
+	color: #3a2a1a;
+	border-color: rgba(141, 109, 60, 0.35);
+}
+
+:global([data-theme="light"]) .statusSelect:focus {
+	border-color: rgba(141, 109, 60, 0.55);
+}
+
+:global([data-theme="light"]) .statusBadge {
+	color: #7c3f1e;
+	background: rgba(182, 92, 44, 0.16);
+	border-color: rgba(182, 92, 44, 0.35);
 }
 
 .lineBreak {
