@@ -11,7 +11,7 @@ const colorMap: Record<Source, string> = {
 export default function SourceBadge({ source }: { source: Source }) {
   return (
     <span
-      className={`inline-block rounded-full px-2 py-0.5 text-xs font-medium ${colorMap[source]}`}
+      className={`inline-flex items-center justify-center rounded-full px-2 py-0.5 text-xs font-medium ${colorMap[source]}`}
     >
       {source}
     </span>

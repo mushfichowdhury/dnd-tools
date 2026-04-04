@@ -9,6 +9,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You channel your rage into a violent frenzy, gaining extra attacks and immunity to fear and charm effects while raging.",
     hint: "Good if you want pure, simple damage output",
     source: "PHB",
+    features: [
+      { level: 3, name: "Frenzy", description: "While raging, you can make one extra attack as a bonus action each turn." },
+      { level: 6, name: "Mindless Rage", description: "You can't be charmed or frightened while raging." },
+      { level: 10, name: "Intimidating Presence", description: "Use an action to frighten one creature within 30 feet for 1 minute." },
+      { level: 14, name: "Retaliation", description: "When you take damage from a nearby creature, you can use your reaction to make a melee attack against it." },
+    ],
   },
   {
     id: "totem-warrior",
@@ -17,6 +23,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You forge a spiritual bond with a totem animal, gaining powerful defensive or offensive abilities based on your chosen beast.",
     hint: "Good if you want tanking ability (Bear) or mobility (Eagle)",
     source: "PHB",
+    features: [
+      { level: 3, name: "Totem Spirit", description: "Choose Bear (resist all damage but psychic), Eagle (disadvantage on opportunity attacks against you), or Wolf (allies have advantage on melee attacks vs. enemies near you)." },
+      { level: 6, name: "Aspect of the Beast", description: "Gain a passive exploration benefit based on your totem animal." },
+      { level: 10, name: "Spirit Walker", description: "Cast Commune with Nature as a ritual to sense the land around you." },
+      { level: 14, name: "Totemic Attunement", description: "Gain a powerful combat benefit from your totem — Bear knocks prone, Eagle lets you fly briefly, Wolf knocks prone on hit." },
+    ],
   },
   {
     id: "ancestral-guardian",
@@ -25,6 +37,12 @@ export const subclasses: Subclass[] = [
     synopsis: "Spectral warriors of your ancestors appear when you rage, hindering enemies that try to attack anyone but you.",
     hint: "Good if you want to protect your allies by forcing enemies to focus you",
     source: "Xanathar's Guide",
+    features: [
+      { level: 3, name: "Ancestral Protectors", description: "The first creature you hit while raging has disadvantage on attacks against anyone but you." },
+      { level: 6, name: "Spirit Shield", description: "As a reaction, reduce damage dealt to an ally within 30 feet by 2d6." },
+      { level: 10, name: "Consult the Spirits", description: "Cast Clairvoyance or Augury once without a spell slot." },
+      { level: 14, name: "Vengeful Ancestors", description: "When Spirit Shield reduces damage, the attacker takes the same amount as force damage." },
+    ],
   },
   {
     id: "storm-herald",
@@ -33,6 +51,12 @@ export const subclasses: Subclass[] = [
     synopsis: "Your rage generates an aura of elemental power — desert heat, frozen tundra, or crackling sea storms around you.",
     hint: "Good if you want your rage to deal area damage or buff allies",
     source: "Xanathar's Guide",
+    features: [
+      { level: 3, name: "Storm Aura", description: "While raging, you emanate an aura — Desert deals fire damage, Sea shoots lightning, Tundra grants temp HP." },
+      { level: 6, name: "Storm Soul", description: "Gain resistance to your aura's element plus a bonus effect like fire immunity or water breathing." },
+      { level: 10, name: "Shielding Storm", description: "Allies in your aura also gain resistance to your chosen element." },
+      { level: 14, name: "Raging Storm", description: "Your aura gains a powerful reactive effect — knock prone, pull enemies, or deal retaliatory damage." },
+    ],
   },
   {
     id: "zealot",
@@ -41,6 +65,12 @@ export const subclasses: Subclass[] = [
     synopsis: "Divine fury fuels your rage, adding radiant or necrotic damage to attacks and making you incredibly hard to permanently kill.",
     hint: "Good if you want to deal holy damage and be nearly impossible to keep dead",
     source: "Xanathar's Guide",
+    features: [
+      { level: 3, name: "Divine Fury", description: "Your first hit each turn while raging deals extra 1d6+half level radiant or necrotic damage." },
+      { level: 6, name: "Fanatical Focus", description: "Once per rage, you can reroll a failed saving throw." },
+      { level: 10, name: "Zealous Presence", description: "As a bonus action, give up to 10 allies advantage on attacks and saves until your next turn. Once per long rest." },
+      { level: 14, name: "Rage Beyond Death", description: "While raging at 0 HP, you don't fall unconscious — you keep fighting until the rage ends." },
+    ],
   },
   {
     id: "beast",
@@ -49,6 +79,12 @@ export const subclasses: Subclass[] = [
     synopsis: "When you rage, you sprout natural weapons — claws, a tail, or fangs — channeling the feral power within you.",
     hint: "Good if you want to grow claws and fangs when you rage",
     source: "Tasha's Cauldron",
+    features: [
+      { level: 3, name: "Form of the Beast", description: "When you rage, grow Claws (extra claw attack), Bite (heal on hit), or Tail (reaction to boost AC)." },
+      { level: 6, name: "Bestial Soul", description: "Your natural weapons count as magical. Gain swimming, climbing, or extended jump distance." },
+      { level: 10, name: "Infectious Fury", description: "When you hit, force the target to attack a nearby ally or take 2d12 psychic damage." },
+      { level: 14, name: "Call the Hunt", description: "When you rage, choose allies to also gain your rage damage bonus. You gain temp HP for each." },
+    ],
   },
 
   // ========== BARD ==========
@@ -59,6 +95,11 @@ export const subclasses: Subclass[] = [
     synopsis: "You pursue knowledge above all else, gaining extra skills and the ability to cut enemies down with Cutting Words.",
     hint: "Good if you want maximum versatility and spell options",
     source: "PHB",
+    features: [
+      { level: 3, name: "Cutting Words", description: "Use a Bardic Inspiration die to subtract from an enemy's attack roll, ability check, or damage." },
+      { level: 6, name: "Additional Magical Secrets", description: "Learn two spells from any class's spell list at level 6 instead of waiting until level 10." },
+      { level: 14, name: "Peerless Skill", description: "Spend a Bardic Inspiration die to add it to your own ability checks." },
+    ],
   },
   {
     id: "college-of-valor",
@@ -67,6 +108,11 @@ export const subclasses: Subclass[] = [
     synopsis: "You are a warrior-poet who inspires allies in battle, gaining medium armor, shields, and extra attack.",
     hint: "Good if you want to fight in melee while casting spells",
     source: "PHB",
+    features: [
+      { level: 3, name: "Combat Inspiration", description: "Allies can add your Bardic Inspiration die to weapon damage or AC as a reaction." },
+      { level: 6, name: "Extra Attack", description: "You can attack twice when you take the Attack action." },
+      { level: 14, name: "Battle Magic", description: "When you cast a spell, you can make one weapon attack as a bonus action." },
+    ],
   },
   {
     id: "college-of-glamour",
@@ -75,6 +121,11 @@ export const subclasses: Subclass[] = [
     synopsis: "You channel fey magic to entrance and command audiences, granting allies temporary HP and free movement.",
     hint: "Good if you want to charm and dazzle everyone around you",
     source: "Xanathar's Guide",
+    features: [
+      { level: 3, name: "Mantle of Inspiration", description: "Spend a Bardic Inspiration to give allies temp HP and let them move without provoking opportunity attacks." },
+      { level: 6, name: "Mantle of Majesty", description: "For 1 minute, cast Command as a bonus action each turn without using a spell slot." },
+      { level: 14, name: "Unbreakable Majesty", description: "Enemies that target you must make a Charisma save or choose a different target." },
+    ],
   },
   {
     id: "college-of-swords",
@@ -83,6 +134,11 @@ export const subclasses: Subclass[] = [
     synopsis: "You use your weapon as a spellcasting focus, performing blade flourishes that deal extra damage and grant defensive bonuses.",
     hint: "Good if you want a swashbuckling, weapon-wielding bard",
     source: "Xanathar's Guide",
+    features: [
+      { level: 3, name: "Blade Flourish", description: "When you attack, spend Bardic Inspiration on a flourish — deal extra damage, boost AC, or push enemies." },
+      { level: 6, name: "Extra Attack", description: "You can attack twice when you take the Attack action." },
+      { level: 14, name: "Master's Flourish", description: "Use a d6 for Blade Flourish instead of spending a Bardic Inspiration die." },
+    ],
   },
   {
     id: "college-of-whispers",
@@ -91,6 +147,11 @@ export const subclasses: Subclass[] = [
     synopsis: "You use words as weapons, dealing psychic damage and stealing the identities of those you slay.",
     hint: "Good if you want a dark, spy-themed bard who manipulates from shadows",
     source: "Xanathar's Guide",
+    features: [
+      { level: 3, name: "Psychic Blades", description: "Spend Bardic Inspiration to deal extra psychic damage on a weapon hit." },
+      { level: 6, name: "Mantle of Whispers", description: "When a humanoid dies near you, capture its shadow to disguise yourself as that person." },
+      { level: 14, name: "Shadow Lore", description: "Magically compel a creature to obey you for 8 hours. Once per long rest." },
+    ],
   },
   {
     id: "college-of-creation",
@@ -99,6 +160,11 @@ export const subclasses: Subclass[] = [
     synopsis: "You channel the cosmic Song of Creation, animating objects and creating items from nothing with your performances.",
     hint: "Good if you want to create objects and animate items to fight for you",
     source: "Tasha's Cauldron",
+    features: [
+      { level: 3, name: "Mote of Potential", description: "Your Bardic Inspiration creates a mote that adds bonus effects — damage, temp HP, or disadvantage on saves." },
+      { level: 6, name: "Performance of Creation", description: "Create a nonmagical item worth up to 20x your level in gold. It lasts for hours equal to your proficiency bonus." },
+      { level: 14, name: "Creative Crescendo", description: "When you use Performance of Creation, create multiple items at once equal to your Charisma modifier." },
+    ],
   },
 
   // ========== CLERIC ==========
@@ -109,6 +175,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You are the ultimate healer, empowering every healing spell with bonus hit points and gaining heavy armor proficiency.",
     hint: "Good if you want to be the best healer in the game, period",
     source: "PHB",
+    features: [
+      { level: 1, name: "Disciple of Life", description: "Your healing spells restore extra HP equal to 2 + the spell's level." },
+      { level: 2, name: "Preserve Life", description: "Channel Divinity to distribute a pool of HP (5x cleric level) to heal allies within 30 feet." },
+      { level: 6, name: "Blessed Healer", description: "When you heal someone else, you also regain HP equal to 2 + the spell's level." },
+      { level: 17, name: "Supreme Healing", description: "Your healing spells always restore the maximum possible HP instead of rolling." },
+    ],
   },
   {
     id: "light-domain",
@@ -117,6 +189,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You wield radiant fire and light, blasting enemies with Fireball and Scorching Ray while protecting allies with Warding Flare.",
     hint: "Good if you want a cleric that deals serious damage",
     source: "PHB",
+    features: [
+      { level: 1, name: "Warding Flare", description: "As a reaction, impose disadvantage on an attacker's attack roll against you or an ally." },
+      { level: 2, name: "Radiance of the Dawn", description: "Channel Divinity to dispel magical darkness and deal radiant damage to nearby enemies." },
+      { level: 6, name: "Improved Flare", description: "You can use Warding Flare to protect allies within 30 feet, not just yourself." },
+      { level: 17, name: "Corona of Light", description: "Emit bright light that gives enemies disadvantage on saves against fire and radiant spells." },
+    ],
   },
   {
     id: "forge-domain",
@@ -125,6 +203,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You are a divine smith who can enchant weapons and armor, gaining fire resistance and incredible AC through Blessing of the Forge.",
     hint: "Good if you want to be an armored tank who crafts magical gear",
     source: "Xanathar's Guide",
+    features: [
+      { level: 1, name: "Blessing of the Forge", description: "At the end of a long rest, grant one weapon or armor a +1 bonus until your next long rest." },
+      { level: 2, name: "Artisan's Blessing", description: "Channel Divinity to create a simple metal object — a weapon, armor, or up to 100 gp in metal items." },
+      { level: 6, name: "Soul of the Forge", description: "Gain fire resistance and +1 AC while wearing heavy armor." },
+      { level: 17, name: "Saint of Forge and Fire", description: "Gain immunity to fire damage. While wearing heavy armor, resist nonmagical bludgeoning, piercing, and slashing." },
+    ],
   },
   {
     id: "grave-domain",
@@ -133,6 +217,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You stand at the boundary between life and death, preventing death and maximizing healing on unconscious allies.",
     hint: "Good if you want to keep allies alive at the last second",
     source: "Xanathar's Guide",
+    features: [
+      { level: 1, name: "Circle of Mortality", description: "Healing spells on unconscious allies always restore the maximum HP. You also learn Spare the Dying as a bonus action cantrip." },
+      { level: 2, name: "Path to the Grave", description: "Channel Divinity to make one creature vulnerable to the next attack against it — doubling the damage." },
+      { level: 6, name: "Sentinel at Death's Door", description: "As a reaction, turn a critical hit against an ally into a normal hit." },
+      { level: 17, name: "Keeper of Souls", description: "When an enemy dies near you, an ally within 60 feet regains HP equal to the dead creature's hit dice." },
+    ],
   },
   {
     id: "peace-domain",
@@ -141,6 +231,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You forge bonds between allies that let them share damage, add d4s to rolls, and teleport to protect each other.",
     hint: "Good if you want incredibly powerful party-wide buffs",
     source: "Tasha's Cauldron",
+    features: [
+      { level: 1, name: "Emboldening Bond", description: "Bond allies together — once per turn, a bonded creature adds 1d4 to an attack roll, ability check, or save." },
+      { level: 2, name: "Balm of Peace", description: "Channel Divinity to move your speed without provoking and heal each creature you pass." },
+      { level: 6, name: "Protective Bond", description: "Bonded allies can teleport to take damage meant for each other as a reaction." },
+      { level: 17, name: "Expansive Bond", description: "Your bond range doubles to 60 feet, and bonded creatures gain resistance when taking damage for each other." },
+    ],
   },
 
   // ========== DRUID ==========
@@ -151,6 +247,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You draw power from a specific terrain, gaining bonus spells and the ability to recover spell slots during short rests.",
     hint: "Good if you want more spellcasting power over wild shape",
     source: "PHB",
+    features: [
+      { level: 2, name: "Natural Recovery", description: "During a short rest, recover expended spell slots with a combined level up to half your druid level." },
+      { level: 6, name: "Land's Stride", description: "Moving through nonmagical difficult terrain costs no extra movement. You're immune to magical plant hazards." },
+      { level: 10, name: "Nature's Ward", description: "You can't be charmed or frightened by elementals or fey, and you're immune to poison and disease." },
+      { level: 14, name: "Nature's Sanctuary", description: "Beasts and plant creatures must make a Wisdom save to attack you." },
+    ],
   },
   {
     id: "circle-of-the-moon",
@@ -159,6 +261,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You specialize in wild shape combat, transforming into powerful beasts earlier and more effectively than other druids.",
     hint: "Good if you want to turn into a bear and maul things",
     source: "PHB",
+    features: [
+      { level: 2, name: "Combat Wild Shape", description: "Wild shape as a bonus action and transform into more powerful beasts (up to CR 1 at level 2)." },
+      { level: 6, name: "Primal Strike", description: "Your attacks in beast form count as magical for overcoming resistance and immunity." },
+      { level: 10, name: "Elemental Wild Shape", description: "Spend two Wild Shape uses to transform into an air, earth, fire, or water elemental." },
+      { level: 14, name: "Thousand Forms", description: "Cast Alter Self at will without using a spell slot." },
+    ],
   },
   {
     id: "circle-of-dreams",
@@ -167,6 +275,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You draw on the power of the Feywild to heal allies with Balm of the Summer Court and create safe havens for rest.",
     hint: "Good if you want fey-themed healing and safe travel abilities",
     source: "Xanathar's Guide",
+    features: [
+      { level: 2, name: "Balm of the Summer Court", description: "Use a pool of d6s (equal to druid level) to heal allies as a bonus action." },
+      { level: 6, name: "Hearth of Moonlight and Shadow", description: "Create a 30-foot invisible shelter during rests that grants a bonus to Perception and Stealth checks." },
+      { level: 10, name: "Hidden Paths", description: "Teleport yourself or a willing ally up to 60 feet as a bonus action." },
+      { level: 14, name: "Walker in Dreams", description: "After a short rest, cast Dream, Scrying, or Teleportation Circle without a spell slot." },
+    ],
   },
   {
     id: "circle-of-the-shepherd",
@@ -175,6 +289,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You summon spirit totems that buff allies and empower your conjured creatures to be far more effective in combat.",
     hint: "Good if you want to summon armies of animals and spirits",
     source: "Xanathar's Guide",
+    features: [
+      { level: 2, name: "Spirit Totem", description: "Summon a spirit totem (Bear for temp HP, Hawk for advantage on attacks, Unicorn for bonus healing) in a 30-foot aura." },
+      { level: 6, name: "Mighty Summoner", description: "Beasts and fey you summon gain +2 HP per hit die and their attacks count as magical." },
+      { level: 10, name: "Guardian Spirit", description: "Your summoned creatures automatically regain HP equal to half your druid level each turn." },
+      { level: 14, name: "Faithful Summons", description: "When you drop to 0 HP, automatically summon four beasts of CR 2 or lower that protect you." },
+    ],
   },
   {
     id: "circle-of-wildfire",
@@ -183,6 +303,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You command a wildfire spirit companion and wield fire magic, using destruction and renewal as two sides of the same coin.",
     hint: "Good if you want a fire-wielding druid with a flame spirit pet",
     source: "Tasha's Cauldron",
+    features: [
+      { level: 2, name: "Summon Wildfire Spirit", description: "Spend a Wild Shape use to summon a fire spirit companion that deals fire damage and teleports allies." },
+      { level: 6, name: "Enhanced Bond", description: "Your fire and healing spells deal/restore an extra 1d8 when cast through your wildfire spirit." },
+      { level: 10, name: "Cauterizing Flames", description: "When a creature dies near your spirit, you can heal or damage another creature for 2d10+Wisdom." },
+      { level: 14, name: "Blazing Revival", description: "If you drop to 0 HP with your spirit active, it dies and you regain half your HP. Once per long rest." },
+    ],
   },
   {
     id: "circle-of-spores",
@@ -191,6 +317,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You harness the power of decay and fungal growth, dealing necrotic damage and animating corpses with spores.",
     hint: "Good if you want a dark, necromantic druid who spreads fungal death",
     source: "Tasha's Cauldron",
+    features: [
+      { level: 2, name: "Symbiotic Entity", description: "Spend a Wild Shape to gain 4 temp HP per druid level and deal extra 1d6 necrotic on melee hits." },
+      { level: 6, name: "Fungal Infestation", description: "When a beast or humanoid dies near you, animate it as a zombie with 1 HP that fights for you." },
+      { level: 10, name: "Spreading Spores", description: "Move your Halo of Spores to a point within 30 feet, creating a damaging 10-foot cube." },
+      { level: 14, name: "Fungal Body", description: "You can't be blinded, deafened, frightened, or poisoned, and crits against you become normal hits." },
+    ],
   },
 
   // ========== FIGHTER ==========
@@ -201,6 +333,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You are a straightforward warrior who crits more often and gains improved athletics. Simple, effective, and deadly.",
     hint: "Good if you want a simple, effective fighter with extra crits",
     source: "PHB",
+    features: [
+      { level: 3, name: "Improved Critical", description: "Your weapon attacks score a critical hit on a roll of 19 or 20." },
+      { level: 7, name: "Remarkable Athlete", description: "Add half your proficiency bonus to Strength, Dexterity, and Constitution checks you aren't already proficient in." },
+      { level: 10, name: "Additional Fighting Style", description: "Choose a second Fighting Style from the fighter list." },
+      { level: 15, name: "Superior Critical", description: "Your weapon attacks now score a critical hit on a roll of 18, 19, or 20." },
+    ],
   },
   {
     id: "battle-master",
@@ -209,6 +347,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You learn tactical maneuvers like Trip Attack, Riposte, and Disarming Strike, giving you combat options beyond just attacking.",
     hint: "Good if you want tactical combat options and battlefield control",
     source: "PHB",
+    features: [
+      { level: 3, name: "Combat Superiority", description: "Learn 3 maneuvers and gain 4 superiority dice (d8) to fuel them — Trip, Riposte, Disarm, and more." },
+      { level: 7, name: "Know Your Enemy", description: "Study a creature for 1 minute to learn if it's superior, equal, or inferior to you in two stats." },
+      { level: 10, name: "Improved Combat Superiority", description: "Your superiority dice upgrade to d10s and you learn 2 more maneuvers." },
+      { level: 15, name: "Relentless", description: "If you start a fight with no superiority dice, you regain one automatically." },
+    ],
   },
   {
     id: "eldritch-knight",
@@ -217,6 +361,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You combine martial prowess with arcane magic, casting Shield and other spells while still being a full fighter.",
     hint: "Good if you want a fighter who can also cast spells",
     source: "PHB",
+    features: [
+      { level: 3, name: "Spellcasting", description: "Learn wizard cantrips and spells (mainly abjuration and evocation). Cast Shield, Absorb Elements, and more." },
+      { level: 7, name: "War Magic", description: "When you cast a cantrip, you can make one weapon attack as a bonus action." },
+      { level: 10, name: "Eldritch Strike", description: "When you hit with a weapon, the target has disadvantage on its next save against your spells." },
+      { level: 15, name: "Arcane Charge", description: "When you Action Surge, you can teleport up to 30 feet before your extra action." },
+    ],
   },
   {
     id: "arcane-archer",
@@ -225,6 +375,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You infuse your arrows with magic, creating effects like seeking arrows, banishing shots, and shadow arrows.",
     hint: "Good if you want a magical archer with trick-shot arrows",
     source: "Xanathar's Guide",
+    features: [
+      { level: 3, name: "Arcane Shot", description: "Learn 2 magical shot options. Twice per short rest, add effects like seeking, banishing, or grasping to your arrows." },
+      { level: 7, name: "Magic Arrow", description: "Your nonmagical arrows count as magical. You also learn an additional Arcane Shot option." },
+      { level: 10, name: "Curving Shot", description: "When you miss with a magic arrow, redirect it at a different target within 60 feet as a bonus action." },
+      { level: 15, name: "Ever-Ready Shot", description: "If you start a fight with no Arcane Shot uses, you regain one automatically." },
+    ],
   },
   {
     id: "cavalier",
@@ -233,6 +389,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You are a mounted combat expert who marks enemies and punishes them for attacking anyone but you.",
     hint: "Good if you want to be a mounted knight who protects allies",
     source: "Xanathar's Guide",
+    features: [
+      { level: 3, name: "Unwavering Mark", description: "When you hit a creature, mark it. If it attacks anyone but you, you can make a bonus attack against it." },
+      { level: 7, name: "Warding Maneuver", description: "As a reaction, add 1d8 to an ally's AC. If the attack still hits, the ally gains resistance to that damage." },
+      { level: 10, name: "Hold the Line", description: "Creatures provoke opportunity attacks when they move 5 feet within your reach, and your hits reduce their speed to 0." },
+      { level: 15, name: "Ferocious Charger", description: "If you move 10+ feet in a straight line before attacking, the target must make a Strength save or be knocked prone." },
+    ],
   },
   {
     id: "samurai",
@@ -241,6 +403,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You can grant yourself advantage on all attacks for a turn through Fighting Spirit, and gain proficiency in social skills.",
     hint: "Good if you want a disciplined warrior with burst damage turns",
     source: "Xanathar's Guide",
+    features: [
+      { level: 3, name: "Fighting Spirit", description: "As a bonus action, gain advantage on all attacks this turn and 5 temp HP. Three uses per long rest." },
+      { level: 7, name: "Elegant Courtier", description: "Add your Wisdom modifier to Persuasion checks. Gain proficiency in Wisdom saves (or another save if already proficient)." },
+      { level: 10, name: "Tireless Spirit", description: "If you start combat with no Fighting Spirit uses, you regain one automatically." },
+      { level: 15, name: "Rapid Strike", description: "When you have advantage, you can forgo it on one attack to make an extra weapon attack instead." },
+    ],
   },
   {
     id: "psi-warrior",
@@ -249,6 +417,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You wield telekinetic power to create force barriers, move objects with your mind, and deal psychic damage.",
     hint: "Good if you want a Jedi-like fighter with psychic powers",
     source: "Tasha's Cauldron",
+    features: [
+      { level: 3, name: "Psionic Power", description: "Gain Psionic Energy dice to fuel abilities — add psychic damage, create a protective shield, or telekinetically move objects." },
+      { level: 7, name: "Telekinetic Adept", description: "Hurl creatures or objects with your mind, and fly up to half your speed using psi power." },
+      { level: 10, name: "Guarded Mind", description: "Gain resistance to psychic damage. Spend a Psionic Energy die to end charmed or frightened on yourself." },
+      { level: 15, name: "Bulwark of Force", description: "Create a shield of force that grants half cover to you and allies within 30 feet." },
+    ],
   },
   {
     id: "rune-knight",
@@ -257,6 +431,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You carve giant runes onto your equipment, growing to Large size and gaining powerful magical effects.",
     hint: "Good if you want to grow giant-sized and use ancient rune magic",
     source: "Tasha's Cauldron",
+    features: [
+      { level: 3, name: "Giant's Might", description: "As a bonus action, become Large size for 1 minute — gain advantage on Strength checks and deal extra 1d6 damage." },
+      { level: 7, name: "Runic Shield", description: "When an ally is hit by an attack, use your reaction to force the attacker to reroll and use the new result." },
+      { level: 10, name: "Great Stature", description: "Grow 3d4 inches taller. Your Giant's Might extra damage increases to 1d8." },
+      { level: 15, name: "Master of Runes", description: "You can invoke each of your runes twice per short rest instead of once." },
+    ],
   },
 
   // ========== MONK ==========
@@ -267,6 +447,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You master unarmed combat techniques, knocking enemies prone, pushing them away, or preventing them from taking reactions.",
     hint: "Good if you want the classic martial artist fantasy",
     source: "PHB",
+    features: [
+      { level: 3, name: "Open Hand Technique", description: "When you hit with Flurry of Blows, knock the target prone, push it 15 feet, or prevent reactions." },
+      { level: 6, name: "Wholeness of Body", description: "As an action, heal yourself for 3x your monk level in HP. Once per long rest." },
+      { level: 11, name: "Tranquility", description: "At the end of a long rest, gain the effect of Sanctuary — enemies must save to attack you." },
+      { level: 17, name: "Quivering Palm", description: "Set up vibrations in a target. Later, force it to make a save or drop to 0 HP." },
+    ],
   },
   {
     id: "way-of-shadow",
@@ -275,6 +461,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You become a ninja-like warrior who can teleport between shadows, cast darkness, and become invisible.",
     hint: "Good if you want a stealthy, shadow-teleporting monk",
     source: "PHB",
+    features: [
+      { level: 3, name: "Shadow Arts", description: "Spend 2 Ki to cast Darkness, Darkvision, Pass without Trace, or Silence. Minor Illusion is free." },
+      { level: 6, name: "Shadow Step", description: "Teleport up to 60 feet between shadows as a bonus action and gain advantage on your next attack." },
+      { level: 11, name: "Cloak of Shadows", description: "Become invisible in dim light or darkness until you attack or cast a spell." },
+      { level: 17, name: "Opportunist", description: "When a creature within 5 feet is hit by someone else, you can use your reaction to attack it." },
+    ],
   },
   {
     id: "way-of-the-kensei",
@@ -283,6 +475,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You master specific weapons as extensions of your body, gaining bonuses to attacks and the ability to use them with Ki.",
     hint: "Good if you want a weapon-focused monk with a signature blade",
     source: "Xanathar's Guide",
+    features: [
+      { level: 3, name: "Kensei Weapons", description: "Choose 2 weapons as kensei weapons. Gain +2 AC when attacking with a melee kensei weapon, and bonus ranged damage." },
+      { level: 6, name: "One with the Blade", description: "Your kensei weapons count as magical, and you can spend Ki to add extra damage on a hit." },
+      { level: 11, name: "Sharpen the Blade", description: "Spend up to 3 Ki to grant your kensei weapon a bonus to attack and damage rolls for 1 minute." },
+      { level: 17, name: "Unerring Accuracy", description: "Once per turn, if you miss with a monk weapon, you can reroll the attack." },
+    ],
   },
   {
     id: "way-of-the-drunken-master",
@@ -291,6 +489,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You use unpredictable, swaying movements to avoid attacks and redirect enemy strikes, inspired by drunken boxing.",
     hint: "Good if you want a dodge-focused monk with hilarious flavor",
     source: "Xanathar's Guide",
+    features: [
+      { level: 3, name: "Drunken Technique", description: "When you use Flurry of Blows, you gain the benefit of Disengage and +10 feet of movement." },
+      { level: 6, name: "Tipsy Sway", description: "Stand up from prone for 5 feet of movement. When missed, redirect the attack to a nearby creature." },
+      { level: 11, name: "Drunkard's Luck", description: "When you have disadvantage, spend 1 Ki to cancel it." },
+      { level: 17, name: "Intoxicated Frenzy", description: "When you use Flurry of Blows, make up to 5 attacks total if each targets a different creature." },
+    ],
   },
   {
     id: "way-of-the-sun-soul",
@@ -299,6 +503,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You channel your Ki into blasts of radiant energy, firing ranged attacks and creating explosive radiant bursts.",
     hint: "Good if you want a monk who shoots energy blasts like Dragon Ball Z",
     source: "Xanathar's Guide",
+    features: [
+      { level: 3, name: "Radiant Sun Bolt", description: "Make ranged spell attacks that deal radiant damage using your martial arts die. Spend Ki for bonus bolts." },
+      { level: 6, name: "Searing Arc Strike", description: "After attacking, spend Ki to cast Burning Hands as a bonus action at increasing spell levels." },
+      { level: 11, name: "Searing Sunburst", description: "Create an orb of light that explodes for 2d6 radiant damage in a 20-foot sphere. Spend Ki for extra d6s." },
+      { level: 17, name: "Sun Shield", description: "Emit bright light and deal 5+Wisdom radiant damage to creatures that hit you with melee attacks." },
+    ],
   },
   {
     id: "way-of-mercy",
@@ -307,6 +517,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You learn to manipulate life force, healing allies with a touch or dealing devastating necrotic damage to enemies.",
     hint: "Good if you want a monk who can heal allies and harm enemies with Ki",
     source: "Tasha's Cauldron",
+    features: [
+      { level: 3, name: "Hands of Healing", description: "Spend 1 Ki when using Flurry of Blows to heal an ally for your martial arts die + Wisdom modifier." },
+      { level: 6, name: "Physician's Touch", description: "Your Hands of Healing can also end a disease or condition. Your Hands of Harm can poison targets." },
+      { level: 11, name: "Flurry of Healing and Harm", description: "Use Hands of Healing and Hands of Harm for free (no Ki) when using Flurry of Blows." },
+      { level: 17, name: "Hand of Ultimate Mercy", description: "Spend 5 Ki to bring a creature that died within 24 hours back to life. Once per long rest." },
+    ],
   },
 
   // ========== PALADIN ==========
@@ -317,6 +533,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You are the classic holy knight, gaining Sacred Weapon, aura of protection, and powerful anti-fiend/undead abilities.",
     hint: "Good if you want the classic shining knight paladin",
     source: "PHB",
+    features: [
+      { level: 3, name: "Sacred Weapon", description: "Channel Divinity to add Charisma to attack rolls and make your weapon emit bright light for 1 minute." },
+      { level: 7, name: "Aura of Devotion", description: "You and allies within 10 feet can't be charmed." },
+      { level: 15, name: "Purity of Spirit", description: "You are always under the effect of Protection from Evil and Good." },
+      { level: 20, name: "Holy Nimbus", description: "Emit bright sunlight for 1 minute — deal 10 radiant damage to enemies and gain advantage on saves vs. fiends and undead." },
+    ],
   },
   {
     id: "oath-of-vengeance",
@@ -325,6 +547,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You pursue evil with relentless fury, gaining advantage against sworn enemies and the ability to keep them from fleeing.",
     hint: "Good if you want an aggressive, damage-focused paladin",
     source: "PHB",
+    features: [
+      { level: 3, name: "Vow of Enmity", description: "Channel Divinity to gain advantage on all attacks against one creature for 1 minute." },
+      { level: 7, name: "Relentless Avenger", description: "When you hit with an opportunity attack, move up to half your speed without provoking." },
+      { level: 15, name: "Soul of Vengeance", description: "When a creature under your Vow attacks, you can use your reaction to make a melee attack against it." },
+      { level: 20, name: "Avenging Angel", description: "Sprout wings (60 ft fly speed) and emanate a frightening aura for 1 hour." },
+    ],
   },
   {
     id: "oath-of-conquest",
@@ -333,6 +561,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You rule through strength and fear, frightening enemies and locking them in place with your aura of conquest.",
     hint: "Good if you want a dark, authoritarian paladin who controls through fear",
     source: "Xanathar's Guide",
+    features: [
+      { level: 3, name: "Conquering Presence", description: "Channel Divinity to frighten every creature you choose within 30 feet." },
+      { level: 7, name: "Aura of Conquest", description: "Frightened creatures within 10 feet have speed 0 and take psychic damage equal to half your paladin level." },
+      { level: 15, name: "Scornful Rebuke", description: "When a creature hits you, it takes psychic damage equal to your Charisma modifier." },
+      { level: 20, name: "Invincible Conqueror", description: "For 1 minute, gain resistance to all damage, make an extra attack, and crit on 19-20." },
+    ],
   },
   {
     id: "oath-of-redemption",
@@ -341,6 +575,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You believe in peace and redemption, absorbing damage meant for allies and trying to resolve conflicts without violence.",
     hint: "Good if you want a pacifist tank who absorbs damage for the party",
     source: "Xanathar's Guide",
+    features: [
+      { level: 3, name: "Emissary of Peace", description: "Channel Divinity to gain +5 to Persuasion checks for 10 minutes." },
+      { level: 7, name: "Aura of the Guardian", description: "As a reaction, take damage instead of an ally within 10 feet." },
+      { level: 15, name: "Protective Spirit", description: "Regain 1d6+half paladin level HP at the end of your turn if below half HP." },
+      { level: 20, name: "Emissary of Redemption", description: "Gain resistance to all damage from other creatures, and they take radiant damage equal to half the damage they deal to you." },
+    ],
   },
   {
     id: "oath-of-glory",
@@ -349,6 +589,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You strive for athletic perfection and heroic deeds, boosting your speed, strength, and inspiring allies to greatness.",
     hint: "Good if you want a heroic athlete paladin focused on physical feats",
     source: "Tasha's Cauldron",
+    features: [
+      { level: 3, name: "Peerless Athlete", description: "Channel Divinity to gain advantage on Athletics and Acrobatics, carry/push/lift double, and jump farther for 10 minutes." },
+      { level: 7, name: "Aura of Alacrity", description: "Your walking speed increases by 10 feet. Allies within 5 feet gain +10 speed." },
+      { level: 15, name: "Glorious Defense", description: "When a creature hits you or an ally, add Charisma to AC as a reaction. If the attack misses, counterattack." },
+      { level: 20, name: "Living Legend", description: "For 1 minute, gain advantage on Charisma checks, turn a missed attack into a hit once per turn, and reroll a failed save." },
+    ],
   },
 
   // ========== RANGER ==========
@@ -359,6 +605,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You specialize in taking down specific types of prey, gaining extra damage against groups or powerful single targets.",
     hint: "Good if you want a straightforward, versatile ranger",
     source: "PHB",
+    features: [
+      { level: 3, name: "Hunter's Prey", description: "Choose Colossus Slayer (extra 1d8 on wounded targets), Giant Killer (react to big creatures), or Horde Breaker (attack a second nearby enemy)." },
+      { level: 7, name: "Defensive Tactics", description: "Choose a defensive ability — Escape the Horde, Multiattack Defense, or Steel Will (advantage vs. frightened)." },
+      { level: 11, name: "Multiattack", description: "Choose Volley (attack every creature in a 10-foot radius) or Whirlwind Attack (melee attack every creature in reach)." },
+      { level: 15, name: "Superior Hunter's Defense", description: "Choose Evasion, Stand Against the Tide (redirect attacks), or Uncanny Dodge (halve damage)." },
+    ],
   },
   {
     id: "beast-master",
@@ -367,6 +619,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You form a bond with an animal companion that fights alongside you, scouting and attacking in tandem.",
     hint: "Good if you want a loyal animal companion in combat",
     source: "PHB",
+    features: [
+      { level: 3, name: "Ranger's Companion", description: "Gain a beast companion (CR 1/4 or lower) that obeys your commands and fights alongside you." },
+      { level: 7, name: "Exceptional Training", description: "Your companion can Dash, Disengage, Dodge, or Help as a bonus action on its turn." },
+      { level: 11, name: "Bestial Fury", description: "Your companion can make two attacks when you command it to attack." },
+      { level: 15, name: "Share Spells", description: "When you cast a spell targeting yourself, it also affects your companion if it's within 30 feet." },
+    ],
   },
   {
     id: "gloom-stalker",
@@ -375,6 +633,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You thrive in darkness, becoming invisible to darkvision and striking with devastating ambush attacks in the first round.",
     hint: "Good if you want to be the ultimate ambush predator",
     source: "Xanathar's Guide",
+    features: [
+      { level: 3, name: "Dread Ambusher", description: "On your first turn, gain +10 speed and an extra attack that deals 1d8 bonus damage. Also gain darkvision." },
+      { level: 7, name: "Iron Mind", description: "Gain proficiency in Wisdom saving throws (or Intelligence/Charisma if already proficient)." },
+      { level: 11, name: "Stalker's Flurry", description: "When you miss with a weapon attack, make another weapon attack as part of the same action." },
+      { level: 15, name: "Shadowy Dodge", description: "When attacked, use your reaction to impose disadvantage on the attack roll." },
+    ],
   },
   {
     id: "horizon-walker",
@@ -383,6 +647,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You guard the boundaries between planes, teleporting during attacks and dealing force damage to extraplanar threats.",
     hint: "Good if you want a planar teleporting ranger with force damage",
     source: "Xanathar's Guide",
+    features: [
+      { level: 3, name: "Planar Warrior", description: "As a bonus action, deal extra 1d8 force damage on your next weapon hit (increases to 2d8 at level 11)." },
+      { level: 7, name: "Ethereal Step", description: "Cast Etherealness for free, stepping into the Ethereal Plane until the end of your turn. Once per short rest." },
+      { level: 11, name: "Distant Strike", description: "Teleport 10 feet before each attack. If you attack 3 different targets, make a bonus fourth attack." },
+      { level: 15, name: "Spectral Defense", description: "When you take damage, use your reaction to grant yourself resistance to that damage." },
+    ],
   },
   {
     id: "monster-slayer",
@@ -391,6 +661,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You study and hunt supernatural creatures, gaining abilities to detect, counter, and deal extra damage to your quarry.",
     hint: "Good if you want to be a Van Helsing-style monster hunter",
     source: "Xanathar's Guide",
+    features: [
+      { level: 3, name: "Hunter's Sense", description: "Learn a creature's immunities, resistances, and vulnerabilities as an action." },
+      { level: 7, name: "Supernatural Defense", description: "Add 1d6 to saving throws and grapple checks forced by your Slayer's Prey target." },
+      { level: 11, name: "Magic-User's Nemesis", description: "As a reaction, force a creature to make a Wisdom save when it casts a spell or teleports. On fail, the action is wasted." },
+      { level: 15, name: "Slayer's Counter", description: "If your Slayer's Prey target forces you to save, use your reaction to attack it. If you hit, you auto-succeed the save." },
+    ],
   },
   {
     id: "fey-wanderer",
@@ -399,6 +675,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You are touched by fey magic, adding Wisdom to Charisma checks and dealing psychic damage alongside your weapon attacks.",
     hint: "Good if you want a charming, fey-touched ranger with psychic attacks",
     source: "Tasha's Cauldron",
+    features: [
+      { level: 3, name: "Dreadful Strikes", description: "Your weapon attacks deal extra 1d4 psychic damage (once per turn per creature)." },
+      { level: 7, name: "Beguiling Twist", description: "When a creature near you saves against charm or fright, redirect the effect to a different creature as a reaction." },
+      { level: 11, name: "Fey Reinforcements", description: "Cast Summon Fey without a material component. Once per long rest for free." },
+      { level: 15, name: "Misty Wanderer", description: "Cast Misty Step free a number of times equal to your Wisdom modifier. Bring an ally along when you teleport." },
+    ],
   },
   {
     id: "swarmkeeper",
@@ -407,6 +689,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You command a swarm of nature spirits that move enemies, deal extra damage, and eventually let you fly.",
     hint: "Good if you want a swarm of insects or spirits fighting alongside you",
     source: "Tasha's Cauldron",
+    features: [
+      { level: 3, name: "Gathered Swarm", description: "Once per turn when you hit, your swarm deals 1d6 extra damage, moves the target 15 feet, or moves you 5 feet." },
+      { level: 7, name: "Writhing Tide", description: "As a bonus action, gain a hover fly speed of 10 feet for 1 minute. Proficiency bonus uses per long rest." },
+      { level: 11, name: "Mighty Swarm", description: "Your Gathered Swarm improves — knock prone, gain half cover, or deal increased damage." },
+      { level: 15, name: "Swarming Dispersal", description: "When you take damage, use your reaction to become a swarm — gain resistance and teleport up to 30 feet." },
+    ],
   },
 
   // ========== ROGUE ==========
@@ -417,6 +705,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You are the ultimate burglar, using items as bonus actions, climbing faster, and eventually gaining magical item abilities.",
     hint: "Good if you want classic sneaky rogue abilities",
     source: "PHB",
+    features: [
+      { level: 3, name: "Fast Hands", description: "Use a bonus action to pick locks, disarm traps, use objects, or use Sleight of Hand." },
+      { level: 9, name: "Supreme Sneak", description: "Gain advantage on Stealth checks if you move no more than half your speed that turn." },
+      { level: 13, name: "Use Magic Device", description: "Ignore all class, race, and level requirements for using magic items." },
+      { level: 17, name: "Thief's Reflexes", description: "Take two turns in the first round of combat — one at your initiative and one at initiative minus 10." },
+    ],
   },
   {
     id: "assassin",
@@ -425,6 +719,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You specialize in eliminating targets before they can react, gaining advantage and automatic crits against surprised enemies.",
     hint: "Good if you want massive first-strike damage",
     source: "PHB",
+    features: [
+      { level: 3, name: "Assassinate", description: "Advantage on attacks against creatures that haven't acted yet. Hits against surprised creatures are automatic crits." },
+      { level: 9, name: "Infiltration Expertise", description: "Spend 7 days and 25 gp to create a false identity with documentation and an established backstory." },
+      { level: 13, name: "Impostor", description: "Perfectly mimic another person's speech, writing, and behavior after studying them for 3 hours." },
+      { level: 17, name: "Death Strike", description: "When you hit a surprised creature, it must make a Constitution save or take double damage." },
+    ],
   },
   {
     id: "arcane-trickster",
@@ -433,6 +733,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You combine roguish cunning with arcane magic, using Mage Hand for tricks and casting spells like Invisibility and Shield.",
     hint: "Good if you want a rogue who can cast spells and use magical tricks",
     source: "PHB",
+    features: [
+      { level: 3, name: "Mage Hand Legerdemain", description: "Your invisible Mage Hand can pick locks, plant objects, and pick pockets. Also learn wizard spells." },
+      { level: 9, name: "Magical Ambush", description: "When you're hidden and cast a spell, the target has disadvantage on its save." },
+      { level: 13, name: "Versatile Trickster", description: "Use your Mage Hand to distract a creature, giving you advantage on attacks against it." },
+      { level: 17, name: "Spell Thief", description: "When a creature casts a spell on you, steal it — the caster can't use it for 8 hours and you can cast it for free." },
+    ],
   },
   {
     id: "inquisitive",
@@ -441,6 +747,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You are a master detective who can spot lies, find hidden enemies, and use Sneak Attack even without advantage through Insightful Fighting.",
     hint: "Good if you want a Sherlock Holmes-style investigator rogue",
     source: "Xanathar's Guide",
+    features: [
+      { level: 3, name: "Insightful Fighting", description: "Use a bonus action to make an Insight check vs. a target's Deception. On success, Sneak Attack it without needing advantage for 1 minute." },
+      { level: 9, name: "Steady Eye", description: "Gain advantage on Perception and Investigation checks if you move no more than half your speed." },
+      { level: 13, name: "Unerring Eye", description: "Sense the presence of illusions, shapechangers, and other deceptions within 30 feet." },
+      { level: 17, name: "Eye for Weakness", description: "Your Insightful Fighting Sneak Attack deals an extra 3d6 damage." },
+    ],
   },
   {
     id: "scout",
@@ -449,6 +761,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You are a wilderness expert who reacts to danger first, moves away from enemies freely, and gains Nature/Survival expertise.",
     hint: "Good if you want a nature-themed rogue who excels outdoors",
     source: "Xanathar's Guide",
+    features: [
+      { level: 3, name: "Skirmisher", description: "As a reaction when an enemy ends its turn near you, move half your speed without provoking opportunity attacks." },
+      { level: 9, name: "Superior Mobility", description: "Your speed increases by 10 feet. Applies to climbing and swimming speeds too." },
+      { level: 13, name: "Ambush Master", description: "Gain advantage on initiative rolls. The first creature you hit in the first round is easier for allies to hit too." },
+      { level: 17, name: "Sudden Strike", description: "If you attack two different creatures on your turn, you can Sneak Attack both of them." },
+    ],
   },
   {
     id: "swashbuckler",
@@ -457,6 +775,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You are a dashing duelist who can Sneak Attack in one-on-one fights and disengage freely after attacking.",
     hint: "Good if you want a charming, mobile melee rogue like a pirate",
     source: "Xanathar's Guide",
+    features: [
+      { level: 3, name: "Rakish Audacity", description: "Sneak Attack any target you're dueling one-on-one. Add Charisma to initiative." },
+      { level: 9, name: "Panache", description: "Use Persuasion to charm a creature or taunt an enemy into focusing only on you." },
+      { level: 13, name: "Elegant Maneuver", description: "Use a bonus action to gain advantage on your next Acrobatics or Athletics check." },
+      { level: 17, name: "Master Duelist", description: "When you miss with an attack, reroll it with advantage. Once per short rest." },
+    ],
   },
   {
     id: "mastermind",
@@ -465,6 +789,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You are a tactical genius who uses the Help action at range, mimics accents perfectly, and excels at deception and intrigue.",
     hint: "Good if you want to be the party's strategist and social manipulator",
     source: "Xanathar's Guide",
+    features: [
+      { level: 3, name: "Master of Tactics", description: "Use the Help action as a bonus action with 30-foot range instead of 5 feet." },
+      { level: 9, name: "Insightful Manipulator", description: "After 1 minute of observation, learn if a creature is equal/superior/inferior in two ability scores, AC, or class levels." },
+      { level: 13, name: "Misdirection", description: "When you're hit by an attack, redirect it to a creature providing you cover." },
+      { level: 17, name: "Soul of Deceit", description: "Your thoughts can't be read by telepathy. You can present false thoughts and are immune to truth-compulsion magic." },
+    ],
   },
   {
     id: "soulknife",
@@ -473,6 +803,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You manifest psychic blades from your mind, communicate telepathically, and use psionic dice to boost your skills.",
     hint: "Good if you want a psychic rogue with mind blades and telepathy",
     source: "Tasha's Cauldron",
+    features: [
+      { level: 3, name: "Psychic Blades", description: "Manifest psychic blades that deal 1d6 psychic damage (main hand) and 1d4 (off-hand). No physical weapon needed." },
+      { level: 9, name: "Soul Blades", description: "Spend Psionic Energy to teleport up to 10x the die roll in feet, or add the die to attack rolls." },
+      { level: 13, name: "Psychic Veil", description: "Become invisible for 1 hour or until you attack/force a save. Free once per long rest, or 1 Psionic die." },
+      { level: 17, name: "Rend Mind", description: "After Sneak Attack with Psychic Blades, force a Wisdom save. On fail, the target is stunned for 1 minute." },
+    ],
   },
 
   // ========== SORCERER ==========
@@ -483,6 +819,12 @@ export const subclasses: Subclass[] = [
     synopsis: "Your innate magic comes from draconic ancestry, granting you extra HP, natural armor, and empowered elemental spells.",
     hint: "Good if you want a resilient sorcerer with elemental affinity",
     source: "PHB",
+    features: [
+      { level: 1, name: "Draconic Resilience", description: "Gain +1 HP per level and an unarmored AC of 13 + Dexterity (natural dragon scales)." },
+      { level: 6, name: "Elemental Affinity", description: "Add Charisma to damage of spells matching your dragon ancestor's element. Spend 1 sorcery point for resistance." },
+      { level: 14, name: "Dragon Wings", description: "Sprout dragon wings as a bonus action, gaining a fly speed equal to your walking speed." },
+      { level: 18, name: "Draconic Presence", description: "Spend 5 sorcery points to emanate a 60-foot aura of awe or fear for 1 minute." },
+    ],
   },
   {
     id: "wild-magic",
@@ -491,6 +833,12 @@ export const subclasses: Subclass[] = [
     synopsis: "Your magic is unpredictable and chaotic, triggering random magical effects from a wild magic surge table.",
     hint: "Good if you love chaos and random magical effects",
     source: "PHB",
+    features: [
+      { level: 1, name: "Wild Magic Surge", description: "After casting a spell, the DM can have you roll on the Wild Magic Surge table for a random magical effect." },
+      { level: 6, name: "Bend Luck", description: "Spend 2 sorcery points as a reaction to add or subtract 1d4 from any creature's attack, check, or save." },
+      { level: 14, name: "Controlled Chaos", description: "When you roll on the Wild Magic Surge table, roll twice and choose which result happens." },
+      { level: 18, name: "Spell Bombardment", description: "When you roll damage, you can reroll one die that shows the maximum value and add the reroll to the total." },
+    ],
   },
   {
     id: "divine-soul",
@@ -499,6 +847,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You have a divine spark that grants access to the entire Cleric spell list in addition to Sorcerer spells.",
     hint: "Good if you want to be a sorcerer who can also heal and support",
     source: "Xanathar's Guide",
+    features: [
+      { level: 1, name: "Divine Magic", description: "Learn spells from both the Sorcerer and Cleric spell lists. Also gain a free bonus spell based on your affinity." },
+      { level: 6, name: "Empowered Healing", description: "Spend 1 sorcery point to reroll healing dice (yours or an ally's) within 5 feet." },
+      { level: 14, name: "Otherworldly Wings", description: "Manifest spectral wings as a bonus action, gaining a 30-foot fly speed." },
+      { level: 18, name: "Unearthly Recovery", description: "When below half HP, use a bonus action to regain HP equal to half your max HP. Once per long rest." },
+    ],
   },
   {
     id: "shadow-magic",
@@ -507,6 +861,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You draw power from the Shadowfell, summoning a hound of shadow, seeing in darkness, and cheating death.",
     hint: "Good if you want a dark, shadowy sorcerer with a shadow dog",
     source: "Xanathar's Guide",
+    features: [
+      { level: 1, name: "Strength of the Grave", description: "When reduced to 0 HP (not by radiant damage), make a Charisma save to drop to 1 HP instead." },
+      { level: 6, name: "Hound of Ill Omen", description: "Spend 3 sorcery points to summon a shadow hound that targets one creature, giving it disadvantage on saves against your spells." },
+      { level: 14, name: "Shadow Walk", description: "In dim light or darkness, teleport up to 120 feet as a bonus action." },
+      { level: 18, name: "Umbral Form", description: "Spend 6 sorcery points to become a shadow — gain resistance to all damage except force and radiant, and move through objects." },
+    ],
   },
   {
     id: "storm-sorcery",
@@ -515,6 +875,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You channel the power of storms, flying briefly after casting spells and dealing lightning damage to nearby enemies.",
     hint: "Good if you want a sorcerer with lightning and wind powers",
     source: "Xanathar's Guide",
+    features: [
+      { level: 1, name: "Tempestuous Magic", description: "After casting a spell of 1st level or higher, fly up to 10 feet as a bonus action without provoking opportunity attacks." },
+      { level: 6, name: "Heart of the Storm", description: "Gain resistance to lightning and thunder damage. When you cast a storm spell, deal lightning or thunder damage to nearby enemies." },
+      { level: 14, name: "Storm Guide", description: "Control weather in a small area — stop rain around you or direct winds." },
+      { level: 18, name: "Wind Soul", description: "Gain permanent immunity to lightning and thunder damage, a 60-foot fly speed, and grant allies flight temporarily." },
+    ],
   },
   {
     id: "aberrant-mind",
@@ -523,6 +889,12 @@ export const subclasses: Subclass[] = [
     synopsis: "Your mind was touched by the Far Realm, granting telepathy and the ability to cast psionic spells without components.",
     hint: "Good if you want psychic powers and subtle, undetectable casting",
     source: "Tasha's Cauldron",
+    features: [
+      { level: 1, name: "Psionic Spells", description: "Learn extra spells (Arms of Hadar, Calm Emotions, etc.) that don't count against your spells known. You also gain telepathy." },
+      { level: 6, name: "Psionic Sorcery", description: "Cast your psionic spells using sorcery points instead of spell slots — with no verbal or somatic components." },
+      { level: 14, name: "Revelation in Flesh", description: "Spend sorcery points to gain see-through-invisibility sight, fly speed, swim speed, or squeeze through 1-inch spaces." },
+      { level: 18, name: "Warping Implosion", description: "Teleport 120 feet and pull all nearby creatures toward your former space, dealing 3d10 force damage." },
+    ],
   },
   {
     id: "clockwork-soul",
@@ -531,6 +903,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You channel the orderly magic of Mechanus, canceling advantage/disadvantage and gaining powerful protection spells.",
     hint: "Good if you want a reliable, order-themed sorcerer who prevents chaos",
     source: "Tasha's Cauldron",
+    features: [
+      { level: 1, name: "Clockwork Magic", description: "Learn extra spells like Aid and Lesser Restoration. Cancel advantage or disadvantage on a nearby roll as a reaction." },
+      { level: 6, name: "Bastion of Law", description: "Spend sorcery points to create a damage-absorbing ward (d8s) on a creature that lasts until your next long rest." },
+      { level: 14, name: "Trance of Order", description: "For 1 minute, treat attack rolls and saves of 9 or lower as a 10. Can't be surprised." },
+      { level: 18, name: "Clockwork Cavalcade", description: "Summon clockwork spirits that restore 100 HP (split among allies), repair objects, and end spells up to 6th level." },
+    ],
   },
 
   // ========== WARLOCK ==========
@@ -541,6 +919,12 @@ export const subclasses: Subclass[] = [
     synopsis: "Your patron is a powerful fiend. You gain temporary HP on kills, fire spells, and eventually resistance to a chosen damage type.",
     hint: "Good if you want fire magic and survivability from a devil pact",
     source: "PHB",
+    features: [
+      { level: 1, name: "Dark One's Blessing", description: "When you reduce a hostile creature to 0 HP, gain temp HP equal to your Charisma modifier + warlock level." },
+      { level: 6, name: "Dark One's Own Luck", description: "Once per short rest, add 1d10 to an ability check or saving throw." },
+      { level: 10, name: "Fiendish Resilience", description: "After a short or long rest, choose one damage type. You have resistance to it until you choose a different one." },
+      { level: 14, name: "Hurl Through Hell", description: "When you hit a creature, banish it through the lower planes. It returns and takes 10d10 psychic damage." },
+    ],
   },
   {
     id: "the-great-old-one",
@@ -549,6 +933,12 @@ export const subclasses: Subclass[] = [
     synopsis: "Your patron is an alien entity from beyond reality. You gain telepathy, mind-affecting spells, and eldritch psychic abilities.",
     hint: "Good if you love Lovecraftian horror and psychic powers",
     source: "PHB",
+    features: [
+      { level: 1, name: "Awakened Mind", description: "Communicate telepathically with any creature within 30 feet. No shared language needed." },
+      { level: 6, name: "Entropic Ward", description: "As a reaction, impose disadvantage on an attack against you. If it misses, gain advantage on your next attack against that creature." },
+      { level: 10, name: "Thought Shield", description: "Your thoughts can't be read. Gain resistance to psychic damage and reflect it back to the attacker." },
+      { level: 14, name: "Create Thrall", description: "Touch an incapacitated creature to charm it permanently. Communicate telepathically across any distance." },
+    ],
   },
   {
     id: "the-hexblade",
@@ -557,6 +947,12 @@ export const subclasses: Subclass[] = [
     synopsis: "Your patron is a mysterious sentient weapon. You can fight in melee using Charisma and curse enemies for bonus damage.",
     hint: "Good if you want a melee-capable warlock with a cursed blade",
     source: "Xanathar's Guide",
+    features: [
+      { level: 1, name: "Hexblade's Curse", description: "Curse a creature — gain bonus damage equal to proficiency, crit on 19-20, and heal when it dies." },
+      { level: 6, name: "Accursed Specter", description: "When you slay a humanoid, raise it as a specter that fights for you until your next long rest." },
+      { level: 10, name: "Armor of Hexes", description: "When your cursed target hits you, roll a d6. On 4+, the attack misses instead." },
+      { level: 14, name: "Master of Hexes", description: "When your cursed target dies, transfer the curse to a different creature without using a rest." },
+    ],
   },
   {
     id: "the-celestial",
@@ -565,6 +961,12 @@ export const subclasses: Subclass[] = [
     synopsis: "Your patron is a celestial being. You gain healing abilities, fire and radiant damage bonuses, and a pool of healing dice.",
     hint: "Good if you want a warlock who can heal allies with celestial light",
     source: "Xanathar's Guide",
+    features: [
+      { level: 1, name: "Healing Light", description: "Gain a pool of d6s (1 + warlock level) to heal creatures as a bonus action." },
+      { level: 6, name: "Radiant Soul", description: "Gain resistance to radiant damage. Add Charisma to one damage roll of fire or radiant spells." },
+      { level: 10, name: "Celestial Resilience", description: "Gain temp HP equal to your warlock level + Charisma at the end of a short or long rest. Choose 5 allies to gain half that." },
+      { level: 14, name: "Searing Vengeance", description: "When you make a death save, spring back with half HP, deal 2d8+Cha radiant damage, and blind nearby enemies." },
+    ],
   },
   {
     id: "the-genie",
@@ -573,6 +975,12 @@ export const subclasses: Subclass[] = [
     synopsis: "Your patron is a powerful genie. You get a magic vessel to rest in, deal bonus elemental damage, and eventually grant wishes.",
     hint: "Good if you want a genie's lamp and elemental themed magic",
     source: "Tasha's Cauldron",
+    features: [
+      { level: 1, name: "Genie's Vessel", description: "Gain a magical vessel you can enter to rest in. Once per turn, deal bonus damage of your genie's element type." },
+      { level: 6, name: "Elemental Gift", description: "Gain resistance to your genie's damage type. As a bonus action, gain a 30-foot fly speed for 10 minutes." },
+      { level: 10, name: "Sanctuary Vessel", description: "Bring up to 5 willing creatures into your vessel for a short rest. Everyone inside gains extra temp HP." },
+      { level: 14, name: "Limited Wish", description: "Request a wish from your patron — cast any 6th-level or lower spell without material components. Once every 1d4 long rests." },
+    ],
   },
   {
     id: "the-fathomless",
@@ -581,6 +989,12 @@ export const subclasses: Subclass[] = [
     synopsis: "Your patron lurks in the deepest ocean. You summon spectral tentacles, breathe underwater, and control cold and water.",
     hint: "Good if you want an ocean-themed warlock with tentacle attacks",
     source: "Tasha's Cauldron",
+    features: [
+      { level: 1, name: "Tentacle of the Deeps", description: "Summon a spectral tentacle that attacks for 1d8 cold damage and reduces the target's speed by 10 feet." },
+      { level: 6, name: "Oceanic Soul", description: "Gain resistance to cold damage, breathe underwater, and communicate with any creature underwater." },
+      { level: 10, name: "Guardian Coil", description: "When you or a nearby ally takes damage, your tentacle can reduce it by 1d8 as a reaction." },
+      { level: 14, name: "Grasping Tentacles", description: "Cast Evard's Black Tentacles for free once per long rest. Gain temp HP when you deal damage with it." },
+    ],
   },
 
   // ========== WIZARD ==========
@@ -591,6 +1005,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You specialize in destructive magic, sculpting spells to avoid allies and maximizing damage with empowered evocations.",
     hint: "Good if you want to be the ultimate damage-dealing spellcaster",
     source: "PHB",
+    features: [
+      { level: 2, name: "Sculpt Spells", description: "When you cast an area spell, choose creatures equal to 1+spell level to automatically save and take no damage." },
+      { level: 6, name: "Potent Cantrip", description: "Creatures that save against your cantrips still take half damage." },
+      { level: 10, name: "Empowered Evocation", description: "Add your Intelligence modifier to the damage of any wizard evocation spell." },
+      { level: 14, name: "Overchannel", description: "When you cast a 5th-level or lower spell, deal maximum damage instead of rolling." },
+    ],
   },
   {
     id: "school-of-abjuration",
@@ -599,6 +1019,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You specialize in protective magic, generating an arcane ward that absorbs damage and countering enemy spells.",
     hint: "Good if you want a wizard who can take hits and protect allies",
     source: "PHB",
+    features: [
+      { level: 2, name: "Arcane Ward", description: "Create a magical ward with HP equal to wizard level x2 + Intelligence. Recharge it by casting abjuration spells." },
+      { level: 6, name: "Projected Ward", description: "When an ally within 30 feet takes damage, your Arcane Ward absorbs the damage instead." },
+      { level: 10, name: "Improved Abjuration", description: "Add your proficiency bonus to ability checks for abjuration spells like Counterspell and Dispel Magic." },
+      { level: 14, name: "Spell Resistance", description: "Gain advantage on saves against spells, and resistance to spell damage." },
+    ],
   },
   {
     id: "war-magic",
@@ -607,6 +1033,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You blend offense and defense, boosting your AC and saves as reactions and gaining bonus damage on concentration spells.",
     hint: "Good if you want a durable, combat-focused wizard",
     source: "Xanathar's Guide",
+    features: [
+      { level: 2, name: "Arcane Deflection", description: "As a reaction, gain +2 AC or +4 to a saving throw (but can only cast cantrips next turn)." },
+      { level: 6, name: "Power Surge", description: "Store energy when you counter spells. Spend a surge to deal extra force damage once per turn." },
+      { level: 10, name: "Durable Magic", description: "While concentrating on a spell, gain +2 to AC and all saving throws." },
+      { level: 14, name: "Deflecting Shroud", description: "When you use Arcane Deflection, deal force damage equal to half your wizard level to up to 3 nearby creatures." },
+    ],
   },
   {
     id: "bladesinging",
@@ -615,6 +1047,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You enter an elegant Bladesong dance, gaining AC, speed, and concentration bonuses while fighting with a weapon in one hand.",
     hint: "Good if you want a graceful melee wizard who dances through combat",
     source: "Tasha's Cauldron",
+    features: [
+      { level: 2, name: "Bladesong", description: "As a bonus action, gain +Intelligence to AC, +10 speed, advantage on Acrobatics, and bonus to concentration saves for 1 minute." },
+      { level: 6, name: "Extra Attack", description: "Attack twice when you take the Attack action. You can replace one attack with a cantrip." },
+      { level: 10, name: "Song of Defense", description: "While Bladesong is active, spend spell slots to reduce damage you take (5 HP per slot level)." },
+      { level: 14, name: "Song of Victory", description: "While Bladesong is active, add Intelligence modifier to melee weapon damage." },
+    ],
   },
 
   // ========== ARTIFICER ==========
@@ -625,6 +1063,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You brew magical elixirs that provide random beneficial effects like healing, flight, or transformation to your allies.",
     hint: "Good if you want to be a potion-brewing support character",
     source: "Tasha's Cauldron",
+    features: [
+      { level: 3, name: "Experimental Elixir", description: "Create magical elixirs with random effects — healing, flight, resilience, boldness, swiftness, or transformation." },
+      { level: 5, name: "Alchemical Savant", description: "Add your Intelligence modifier to one roll of acid, fire, necrotic, or poison damage, or HP restored by a spell." },
+      { level: 9, name: "Restorative Reagents", description: "Cast Lesser Restoration for free (Intelligence mod times per long rest). Your elixirs also grant temp HP." },
+      { level: 15, name: "Chemical Mastery", description: "Gain resistance to acid and poison damage plus immunity to the poisoned condition. Cast Greater Restoration and Heal once each for free." },
+    ],
   },
   {
     id: "armorer",
@@ -633,6 +1077,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You modify your armor into a magical suit — either a tanky Guardian mode or a stealthy Infiltrator with a lightning gun.",
     hint: "Good if you want to be Iron Man with magical power armor",
     source: "Tasha's Cauldron",
+    features: [
+      { level: 3, name: "Arcane Armor", description: "Turn armor into Arcane Armor — choose Guardian (thunder gauntlets, temp HP) or Infiltrator (lightning launcher, stealth)." },
+      { level: 5, name: "Extra Attack", description: "Attack twice when you take the Attack action." },
+      { level: 9, name: "Armor Modifications", description: "Your armor gains 4 infusion slots (chest, boots, helmet, weapon) for additional magical properties." },
+      { level: 15, name: "Perfected Armor", description: "Guardian pulls creatures to you and deals thunder damage; Infiltrator deals extra lightning damage that jumps to nearby enemies." },
+    ],
   },
   {
     id: "artillerist",
@@ -641,6 +1091,12 @@ export const subclasses: Subclass[] = [
     synopsis: "You create magical Eldritch Cannons that blast enemies with force, fire, or protect allies with temporary HP shields.",
     hint: "Good if you want magical turrets and explosive firepower",
     source: "Tasha's Cauldron",
+    features: [
+      { level: 3, name: "Eldritch Cannon", description: "Create a cannon — Flamethrower (15-ft cone fire), Force Ballista (ranged force damage), or Protector (temp HP aura)." },
+      { level: 5, name: "Arcane Firearm", description: "Turn a wand, staff, or rod into an arcane firearm that adds 1d8 to one damage roll of artificer spells." },
+      { level: 9, name: "Explosive Cannon", description: "Your cannon's damage increases by 1d8. You can also detonate it for area damage as an action." },
+      { level: 15, name: "Fortified Position", description: "Create two cannons at once. You and allies within 10 feet of a cannon gain half cover." },
+    ],
   },
   {
     id: "battle-smith",
@@ -649,5 +1105,11 @@ export const subclasses: Subclass[] = [
     synopsis: "You create a Steel Defender companion and fight with magical weapons using Intelligence, combining crafting with combat.",
     hint: "Good if you want a robot companion and Intelligence-based melee",
     source: "Tasha's Cauldron",
+    features: [
+      { level: 3, name: "Steel Defender", description: "Create a loyal mechanical companion that fights alongside you, uses your bonus action, and can impose disadvantage on attacks against allies." },
+      { level: 5, name: "Extra Attack", description: "Attack twice when you take the Attack action." },
+      { level: 9, name: "Arcane Jolt", description: "When you or your Steel Defender hits, deal extra 2d6 force damage or heal an ally for 2d6." },
+      { level: 15, name: "Improved Defender", description: "Your Steel Defender gains +2 AC and its Deflect Attack deals 1d4+Int force damage. Arcane Jolt increases to 4d6." },
+    ],
   },
 ];
