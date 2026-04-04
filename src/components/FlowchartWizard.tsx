@@ -249,6 +249,7 @@ export default function FlowchartWizard() {
                         selected={selectedSubclass?.id === sub.id}
                         onClick={() => handleSubclassSelect(sub)}
                         tier={subclassSortMode === "reddit" ? subclassRankings[sub.id] : undefined}
+                        features={sub.features}
                       />
                     ))}
                   </CardGrid>

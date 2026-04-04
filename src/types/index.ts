@@ -24,6 +24,12 @@ export interface DndClass {
   source: Source;
 }
 
+export interface SubclassFeature {
+  level: number;
+  name: string;
+  description: string;
+}
+
 export interface Subclass {
   id: string;
   classId: string;
@@ -31,6 +37,7 @@ export interface Subclass {
   synopsis: string;
   hint: string;
   source: Source;
+  features?: SubclassFeature[];
 }
 
 export type Step = "race" | "class" | "subclass" | "summary";
