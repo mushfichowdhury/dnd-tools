@@ -113,6 +113,26 @@ export const races: Race[] = [
     changes5_5e:
       "Breath Weapon now scales with level (1d10 → 4d10) and can be used as part of the Attack action. Choose Chromatic, Metallic, or Gem ancestry.",
     source: "PHB",
+    variants: [
+      {
+        id: "chromatic",
+        name: "Chromatic",
+        description:
+          "Descended from chromatic dragons (black, blue, green, red, white). Your breath weapon deals acid, lightning, poison, fire, or cold damage. You gain Chromatic Warding, becoming immune to your damage type at higher levels.",
+      },
+      {
+        id: "metallic",
+        name: "Metallic",
+        description:
+          "Descended from metallic dragons (brass, bronze, copper, gold, silver). In addition to a destructive breath weapon, you gain a second breath that can incapacitate or push enemies away.",
+      },
+      {
+        id: "gem",
+        name: "Gem",
+        description:
+          "Descended from gem dragons (amethyst, crystal, emerald, sapphire, topaz). Your breath weapon deals force, radiant, psychic, thunder, or necrotic damage. You also gain limited flight via psionic energy.",
+      },
+    ],
   },
   // 5.5e-only species
   {
@@ -272,5 +292,31 @@ export const races: Race[] = [
     traits: ["Elemental Heritage", "Innate Spellcasting", "Elemental Resistance"],
     editions: ["5e"],
     source: "Mordenkainen's",
+    variants: [
+      {
+        id: "air",
+        name: "Air Genasi",
+        description:
+          "Infused with the power of elemental air. You can hold your breath indefinitely and cast Levitate once per long rest. You gain resistance to lightning damage.",
+      },
+      {
+        id: "earth",
+        name: "Earth Genasi",
+        description:
+          "Infused with the power of elemental earth. You can move across difficult terrain made of earth or stone without extra movement and cast Pass Without Trace once per long rest.",
+      },
+      {
+        id: "fire",
+        name: "Fire Genasi",
+        description:
+          "Infused with the power of elemental fire. You gain resistance to fire damage and can cast Produce Flame and Burning Hands. Your skin may glow with an inner warmth.",
+      },
+      {
+        id: "water",
+        name: "Water Genasi",
+        description:
+          "Infused with the power of elemental water. You can breathe underwater, have a swimming speed, and gain resistance to acid damage. You can cast Shape Water and Create or Destroy Water.",
+      },
+    ],
   },
 ];

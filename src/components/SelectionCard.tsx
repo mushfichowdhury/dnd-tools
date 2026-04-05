@@ -1,7 +1,6 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Source, SubclassFeature, HealthTier, ClassProficiencies } from "@/types";
 import { Tier } from "@/data/rankings";
 import SourceBadge from "./SourceBadge";
@@ -31,6 +30,7 @@ interface SelectionCardProps {
   healthTier?: HealthTier;
   hitDie?: string;
   proficiencies?: ClassProficiencies;
+  onShowDetails?: () => void;
 }
 
 export default function SelectionCard({
@@ -47,8 +47,8 @@ export default function SelectionCard({
   healthTier,
   hitDie,
   proficiencies,
+  onShowDetails,
 }: SelectionCardProps) {
-  const [isExpanded, setIsExpanded] = useState(false);
 
   return (
     <motion.div
@@ -165,53 +165,25 @@ export default function SelectionCard({
           5.5e: {extraNote}
         </p>
       )}
-      {features && features.length > 0 && (
-        <>
-          <button
-            type="button"
-            onClick={(e) => {
-              e.stopPropagation();
-              setIsExpanded((v) => !v);
-            }}
-            className="mt-3 flex w-full items-center justify-center gap-1 text-xs text-white/60 transition-colors hover:text-white"
+      {features && features.length > 0 && onShowDetails && (
+        <button
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            onShowDetails();
+          }}
+          className="mt-3 flex w-full items-center justify-center gap-1 text-xs text-white/60 transition-colors hover:text-white"
+        >
+          <span>Show abilities by level</span>
+          <svg
+            width="12"
+            height="12"
+            viewBox="0 0 16 16"
+            fill="currentColor"
           >
-            <span>{isExpanded ? "Hide abilities" : "Show abilities by level"}</span>
-            <svg
-              width="12"
-              height="12"
-              viewBox="0 0 12 12"
-              fill="currentColor"
-              className={`transition-transform duration-200 ${isExpanded ? "rotate-180" : ""}`}
-            >
-              <path d="M6 8L1 3h10L6 8z" />
-            </svg>
-          </button>
-          <AnimatePresence>
-            {isExpanded && (
-              <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: "auto", opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.25, ease: "easeInOut" }}
-                className="overflow-hidden"
-              >
-                <div className="mt-3 space-y-2 border-t border-gray-700 pt-3">
-                  {features.map((f) => (
-                    <div key={f.level}>
-                      <div className="flex items-center gap-1.5">
-                        <span className="shrink-0 rounded bg-white/15 px-1.5 py-0.5 text-xs font-bold text-white">
-                          Lv {f.level}
-                        </span>
-                        <span className="truncate text-xs font-semibold text-gray-200">{f.name}</span>
-                      </div>
-                      <p className="mt-0.5 text-xs leading-relaxed text-gray-400">{f.description}</p>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </>
+            <path d="M6 3a1 1 0 0 0-.707 1.707L9.586 9l-4.293 4.293a1 1 0 1 0 1.414 1.414l5-5a1 1 0 0 0 0-1.414l-5-5A1 1 0 0 0 6 3z" />
+          </svg>
+        </button>
       )}
     </motion.div>
   );
