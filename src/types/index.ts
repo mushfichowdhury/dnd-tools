@@ -1,6 +1,12 @@
 export type Edition = "5e" | "5.5e";
 export type Source = "PHB" | "Tasha's Cauldron" | "Xanathar's Guide" | "Volo's Guide" | "Mordenkainen's";
 
+export interface RaceVariant {
+  id: string;
+  name: string;
+  description: string;
+}
+
 export interface Race {
   id: string;
   name: string;
@@ -11,6 +17,7 @@ export interface Race {
   editions: Edition[];
   changes5_5e?: string;
   source: Source;
+  variants?: RaceVariant[];
 }
 
 export type HealthTier = "High" | "Above Average" | "Average" | "Low";
