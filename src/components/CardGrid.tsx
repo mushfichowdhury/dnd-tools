@@ -2,6 +2,8 @@
 
 import { ReactNode, Children } from "react";
 import { motion } from "framer-motion";
+import { useIsMobile } from "@/hooks/useIsMobile";
+import MobileCarousel from "./MobileCarousel";
 
 const containerVariants = {
   hidden: {},
@@ -18,6 +20,12 @@ const itemVariants = {
 };
 
 export default function CardGrid({ children }: { children: ReactNode }) {
+  const isMobile = useIsMobile();
+
+  if (isMobile) {
+    return <MobileCarousel>{children}</MobileCarousel>;
+  }
+
   return (
     <motion.div
       className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"
