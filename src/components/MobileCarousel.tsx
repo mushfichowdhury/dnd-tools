@@ -1,57 +1,68 @@
 "use client";
 
 import { ReactNode, Children, useState, useEffect, useRef, useCallback } from "react";
-import { motion, AnimatePresence, PanInfo } from "framer-motion";
+import { motion, PanInfo, useMotionValue, useSpring, useTransform } from "framer-motion";
 
 const SWIPE_THRESHOLD = 50;
 const VELOCITY_THRESHOLD = 500;
-
-const variants = {
-  enter: (direction: number) => ({
-    x: direction > 0 ? 300 : -300,
-    opacity: 0,
-  }),
-  center: {
-    x: 0,
-    opacity: 1,
-  },
-  exit: (direction: number) => ({
-    x: direction > 0 ? -300 : 300,
-    opacity: 0,
-  }),
-};
+const CARD_WIDTH_PERCENT = 85; // Active card takes 85% of viewport
+const CARD_GAP = 12; // px gap between cards
 
 export default function MobileCarousel({ children }: { children: ReactNode }) {
   const items = Children.toArray(children);
   const total = items.length;
   const [activeIndex, setActiveIndex] = useState(0);
-  const [direction, setDirection] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [containerWidth, setContainerWidth] = useState(0);
   const prevCountRef = useRef(total);
+
+  // Measure container width
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const observer = new ResizeObserver(([entry]) => {
+      setContainerWidth(entry.contentRect.width);
+    });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   // Reset index when children change (e.g. new wizard step)
   useEffect(() => {
     if (total !== prevCountRef.current) {
       setActiveIndex(0);
-      setDirection(0);
       prevCountRef.current = total;
     }
   }, [total]);
 
+  const cardWidth = containerWidth * (CARD_WIDTH_PERCENT / 100);
+  const slideWidth = cardWidth + CARD_GAP;
+  // Offset to center the active card with peek on both sides
+  const sideInset = (containerWidth - cardWidth) / 2;
+
+  const dragX = useMotionValue(0);
+  const baseX = -activeIndex * slideWidth;
+  const springX = useSpring(baseX, { stiffness: 300, damping: 30 });
+
+  // Keep spring target in sync with activeIndex
+  useEffect(() => {
+    springX.set(-activeIndex * slideWidth);
+  }, [activeIndex, slideWidth, springX]);
+
   const goTo = useCallback(
     (newIndex: number) => {
       if (newIndex < 0 || newIndex >= total) return;
-      setDirection(newIndex > activeIndex ? 1 : -1);
       setActiveIndex(newIndex);
     },
-    [activeIndex, total],
+    [total],
   );
 
   const handleDragEnd = (_: unknown, info: PanInfo) => {
     const { offset, velocity } = info;
     if (offset.x < -SWIPE_THRESHOLD || velocity.x < -VELOCITY_THRESHOLD) {
-      if (activeIndex < total - 1) goTo(activeIndex + 1);
+      goTo(Math.min(activeIndex + 1, total - 1));
     } else if (offset.x > SWIPE_THRESHOLD || velocity.x > VELOCITY_THRESHOLD) {
-      if (activeIndex > 0) goTo(activeIndex - 1);
+      goTo(Math.max(activeIndex - 1, 0));
     }
   };
 
@@ -65,25 +76,36 @@ export default function MobileCarousel({ children }: { children: ReactNode }) {
   return (
     <div onKeyDown={handleKeyDown} tabIndex={-1} className="outline-none">
       {/* Carousel viewport */}
-      <div className="relative overflow-hidden">
-        <AnimatePresence initial={false} custom={direction} mode="popLayout">
-          <motion.div
-            key={activeIndex}
-            custom={direction}
-            variants={variants}
-            initial="enter"
-            animate="center"
-            exit="exit"
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            drag="x"
-            dragConstraints={{ left: 0, right: 0 }}
-            dragElastic={0.2}
-            onDragEnd={handleDragEnd}
-            className="w-full"
-          >
-            {items[activeIndex]}
-          </motion.div>
-        </AnimatePresence>
+      <div ref={containerRef} className="overflow-hidden">
+        <motion.div
+          className="flex items-stretch"
+          style={{
+            paddingLeft: sideInset,
+            gap: CARD_GAP,
+            x: useTransform(() => springX.get() + dragX.get()),
+          }}
+          drag="x"
+          dragConstraints={{ left: 0, right: 0 }}
+          dragElastic={0.2}
+          onDragEnd={handleDragEnd}
+          onDrag={(_, info) => dragX.set(info.offset.x)}
+          onDragStart={() => dragX.set(0)}
+        >
+          {items.map((child, i) => (
+            <motion.div
+              key={i}
+              className="shrink-0"
+              style={{ width: cardWidth || "85%" }}
+              animate={{
+                scale: i === activeIndex ? 1 : 0.92,
+                opacity: i === activeIndex ? 1 : 0.4,
+              }}
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            >
+              {child}
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
 
       {/* Navigation row */}
