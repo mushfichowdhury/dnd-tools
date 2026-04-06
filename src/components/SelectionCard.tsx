@@ -69,9 +69,9 @@ export default function SelectionCard({
           : "border-indigo-500/20 bg-gray-900/80 hover:border-white/30 hover:bg-gray-900/95"
       }`}
     >
-      <div className="mb-2 flex items-center justify-between gap-2">
-        <h3 className="min-w-0 truncate text-lg font-semibold text-white font-heading text-glow-sm">{title}</h3>
-        <div className="flex shrink-0 items-center gap-1.5">
+      <div className="mb-2">
+        <h3 className="text-lg font-semibold text-white font-heading text-glow-sm">{title}</h3>
+        <div className="mt-1 flex items-center gap-1.5">
           {tier && <TierBadge tier={tier} />}
           <SourceBadge source={source} />
         </div>
@@ -109,18 +109,22 @@ export default function SelectionCard({
       {/* Proficiency chips */}
       {proficiencies && (
         <div className="mt-3 space-y-2 border-t border-gray-700/50 pt-3">
-          {proficiencies.armor.length > 0 && (
-            <div>
+          <div>
               <span className="text-[10px] font-semibold uppercase tracking-wider text-gray-500">Armor</span>
               <div className="mt-0.5 flex flex-wrap gap-1">
-                {proficiencies.armor.map((a) => (
-                  <span key={a} className="rounded-md bg-indigo-500/10 border border-indigo-500/20 px-1.5 py-0.5 text-[10px] text-indigo-300">
-                    {a}
+                {proficiencies.armor.length > 0 ? (
+                  proficiencies.armor.map((a) => (
+                    <span key={a} className="rounded-md bg-indigo-500/10 border border-indigo-500/20 px-1.5 py-0.5 text-[10px] text-indigo-300">
+                      {a}
+                    </span>
+                  ))
+                ) : (
+                  <span className="rounded-md bg-gray-700/30 border border-gray-600/20 px-1.5 py-0.5 text-[10px] text-gray-500">
+                    No Armor
                   </span>
-                ))}
+                )}
               </div>
             </div>
-          )}
           {proficiencies.weapons.length > 0 && (
             <div>
               <span className="text-[10px] font-semibold uppercase tracking-wider text-gray-500">Weapons</span>
