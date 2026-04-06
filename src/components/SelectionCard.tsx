@@ -31,6 +31,7 @@ interface SelectionCardProps {
   hitDie?: string;
   proficiencies?: ClassProficiencies;
   onShowDetails?: () => void;
+  stackBadges?: boolean;
 }
 
 export default function SelectionCard({
@@ -48,6 +49,7 @@ export default function SelectionCard({
   hitDie,
   proficiencies,
   onShowDetails,
+  stackBadges,
 }: SelectionCardProps) {
 
   return (
@@ -69,13 +71,23 @@ export default function SelectionCard({
           : "border-indigo-500/20 bg-gray-900/80 hover:border-white/30 hover:bg-gray-900/95"
       }`}
     >
-      <div className="mb-2">
-        <h3 className="text-lg font-semibold text-white font-heading text-glow-sm">{title}</h3>
-        <div className="mt-1 flex items-center gap-1.5">
-          {tier && <TierBadge tier={tier} />}
-          <SourceBadge source={source} />
+      {stackBadges ? (
+        <div className="mb-2">
+          <h3 className="text-lg font-semibold text-white font-heading text-glow-sm">{title}</h3>
+          <div className="mt-1 flex items-center gap-1.5">
+            {tier && <TierBadge tier={tier} />}
+            <SourceBadge source={source} />
+          </div>
         </div>
-      </div>
+      ) : (
+        <div className="mb-2 flex items-center justify-between gap-2">
+          <h3 className="min-w-0 truncate text-lg font-semibold text-white font-heading text-glow-sm">{title}</h3>
+          <div className="flex shrink-0 items-center gap-1.5">
+            {tier && <TierBadge tier={tier} />}
+            <SourceBadge source={source} />
+          </div>
+        </div>
+      )}
       <p className="mb-2 text-sm leading-relaxed text-gray-300">{synopsis}</p>
       <p className="mb-3 flex items-start gap-1.5 text-sm italic text-gray-400">
         <svg width="16" height="16" viewBox="0 0 16 16" className="mt-0.5 shrink-0 text-white/50" fill="currentColor">

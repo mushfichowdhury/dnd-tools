@@ -271,6 +271,7 @@ export default function FlowchartWizard() {
                       tier={subclassSortMode === "reddit" ? subclassRankings[sub.id] : undefined}
                       features={sub.features}
                       onShowDetails={() => setDetailSubclass(sub)}
+                      stackBadges
                     />
                   ))}
                 </CardGrid>
