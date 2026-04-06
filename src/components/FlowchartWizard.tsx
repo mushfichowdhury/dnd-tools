@@ -206,7 +206,7 @@ export default function FlowchartWizard() {
                   <p className="text-gray-400">
                     Your class defines your abilities, playstyle, and role in the party.
                   </p>
-                  <SortDropdown value={classSortMode} onChange={setClassSortMode} />
+                  <RedditRankToggle value={classSortMode} onChange={setClassSortMode} />
                 </div>
                 <CardGrid>
                   {sortedClasses.map((cls) => (
@@ -256,7 +256,7 @@ export default function FlowchartWizard() {
                     </span>{" "}
                     with unique abilities and flavor.
                   </p>
-                  <SortDropdown value={subclassSortMode} onChange={setSubclassSortMode} />
+                  <RedditRankToggle value={subclassSortMode} onChange={setSubclassSortMode} />
                 </div>
                 <CardGrid>
                   {sortedSubclasses.map((sub) => (
@@ -784,24 +784,32 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
   );
 }
 
-function SortDropdown({
+function RedditRankToggle({
   value,
   onChange,
 }: {
   value: SortMode;
   onChange: (mode: SortMode) => void;
 }) {
+  const isReddit = value === "reddit";
   return (
-    <div className="flex shrink-0 items-center justify-center gap-2">
-      <label className="text-xs text-gray-500">Sort:</label>
-      <select
-        value={value}
-        onChange={(e) => onChange(e.target.value as SortMode)}
-        className="rounded-lg border border-indigo-500/30 bg-gray-800/80 px-2 py-1 text-sm text-gray-300 outline-none focus:border-white/60"
+    <div className="flex shrink-0 items-center gap-2">
+      <span className="text-xs text-gray-400">Rank by Reddit?</span>
+      <button
+        type="button"
+        role="switch"
+        aria-checked={isReddit}
+        onClick={() => onChange(isReddit ? "default" : "reddit")}
+        className={`relative inline-flex h-5 w-9 items-center rounded-full transition-colors ${
+          isReddit ? "bg-indigo-600" : "bg-gray-700"
+        }`}
       >
-        <option value="default">Default</option>
-        <option value="reddit">Reddit Ranking</option>
-      </select>
+        <span
+          className={`inline-block h-3.5 w-3.5 transform rounded-full bg-white transition-transform ${
+            isReddit ? "translate-x-[18px]" : "translate-x-0.5"
+          }`}
+        />
+      </button>
     </div>
   );
 }
