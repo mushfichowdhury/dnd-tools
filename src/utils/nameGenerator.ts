@@ -61,9 +61,19 @@ export function generateNames(
   // If we couldn't get enough unique names, fill remaining slots allowing duplicates
   while (results.length < count) {
     switch (mode) {
-      case "full":
-      case "letter": {
+      case "full": {
         const first = pickRandom(data.firstNames);
+        const last = pickRandom(data.surnames);
+        results.push(`${first} ${last}`);
+        break;
+      }
+      case "letter": {
+        const letter = (startingLetter ?? "a").toLowerCase();
+        const filtered = data.firstNames.filter((n) =>
+          n.toLowerCase().startsWith(letter)
+        );
+        const pool = filtered.length > 0 ? filtered : data.firstNames;
+        const first = pickRandom(pool);
         const last = pickRandom(data.surnames);
         results.push(`${first} ${last}`);
         break;
