@@ -149,17 +149,17 @@ export default function ShareCharacterButton({
             <div style={{ display: "flex", gap: 0 }}>
               <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "8px 8px", textAlign: "center" }}>
                 <div style={{ fontSize: 9, fontWeight: 600, textTransform: "uppercase", letterSpacing: 1.5, color: "#9ca3af", marginBottom: 3 }}>{raceLabel}</div>
-                <div style={{ fontSize: 12, fontWeight: 700, color: "#ffffff" }}>{raceDisplay}</div>
+                <div style={{ fontSize: 11, fontWeight: 700, color: "#ffffff" }}>{raceDisplay}</div>
               </div>
               <div style={{ width: 1, background: "rgba(99,102,241,0.25)" }} />
               <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "8px 8px", textAlign: "center" }}>
                 <div style={{ fontSize: 9, fontWeight: 600, textTransform: "uppercase", letterSpacing: 1.5, color: "#9ca3af", marginBottom: 3 }}>Class</div>
-                <div style={{ fontSize: 12, fontWeight: 700, color: "#ffffff" }}>{dndClassName}</div>
+                <div style={{ fontSize: 11, fontWeight: 700, color: "#ffffff" }}>{dndClassName}</div>
               </div>
               <div style={{ width: 1, background: "rgba(99,102,241,0.25)" }} />
-              <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "8px 8px", textAlign: "center" }}>
+              <div style={{ flex: 2, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "8px 8px", textAlign: "center" }}>
                 <div style={{ fontSize: 9, fontWeight: 600, textTransform: "uppercase", letterSpacing: 1.5, color: "#9ca3af", marginBottom: 3 }}>Subclass</div>
-                <div style={{ fontSize: 12, fontWeight: 700, color: "#ffffff" }}>{subclassName}</div>
+                <div style={{ fontSize: 11, fontWeight: 700, color: "#ffffff" }}>{subclassName}</div>
               </div>
             </div>
           ) : (
