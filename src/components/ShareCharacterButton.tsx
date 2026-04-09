@@ -145,7 +145,7 @@ export default function ShareCharacterButton({
 
           {/* Edition badge */}
           <div style={{ marginTop: 20, display: "flex", justifyContent: "center" }}>
-            <div style={{ fontSize: 11, fontWeight: 500, color: "#a5b4fc", background: "rgba(99,102,241,0.15)", padding: "4px 12px", borderRadius: 20, border: "1px solid rgba(99,102,241,0.2)" }}>
+            <div style={{ fontSize: 11, fontWeight: 500, color: "#a5b4fc", background: "rgba(99,102,241,0.15)", padding: "4px 12px", borderRadius: 20, border: "1px solid rgba(99,102,241,0.2)", textAlign: "center" }}>
               {editionLabel}
             </div>
           </div>
@@ -184,7 +184,7 @@ export default function ShareCharacterButton({
 
 function CardRow({ label, value }: { label: string; value: string }) {
   return (
-    <div>
+    <div style={{ textAlign: "center" }}>
       <div style={{ fontSize: 10, fontWeight: 600, textTransform: "uppercase" as const, letterSpacing: 1.5, color: "#9ca3af", marginBottom: 2 }}>
         {label}
       </div>
