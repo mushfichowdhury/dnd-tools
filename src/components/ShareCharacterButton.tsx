@@ -149,17 +149,17 @@ export default function ShareCharacterButton({
             <div style={{ display: "flex", gap: 0 }}>
               <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "8px 8px", textAlign: "center" }}>
                 <div style={{ fontSize: 9, fontWeight: 600, textTransform: "uppercase", letterSpacing: 1.5, color: "#9ca3af", marginBottom: 3 }}>{raceLabel}</div>
-                <div style={{ fontSize: 12, fontWeight: 700, color: "#ffffff" }}>{raceDisplay}</div>
+                <div style={{ fontSize: 11, fontWeight: 700, color: "#ffffff" }}>{raceDisplay}</div>
               </div>
               <div style={{ width: 1, background: "rgba(99,102,241,0.25)" }} />
               <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "8px 8px", textAlign: "center" }}>
                 <div style={{ fontSize: 9, fontWeight: 600, textTransform: "uppercase", letterSpacing: 1.5, color: "#9ca3af", marginBottom: 3 }}>Class</div>
-                <div style={{ fontSize: 12, fontWeight: 700, color: "#ffffff" }}>{dndClassName}</div>
+                <div style={{ fontSize: 11, fontWeight: 700, color: "#ffffff" }}>{dndClassName}</div>
               </div>
               <div style={{ width: 1, background: "rgba(99,102,241,0.25)" }} />
-              <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "8px 8px", textAlign: "center" }}>
+              <div style={{ flex: 2, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "8px 8px", textAlign: "center" }}>
                 <div style={{ fontSize: 9, fontWeight: 600, textTransform: "uppercase", letterSpacing: 1.5, color: "#9ca3af", marginBottom: 3 }}>Subclass</div>
-                <div style={{ fontSize: 12, fontWeight: 700, color: "#ffffff" }}>{subclassName}</div>
+                <div style={{ fontSize: 11, fontWeight: 700, color: "#ffffff" }}>{subclassName}</div>
               </div>
             </div>
           ) : (
@@ -173,25 +173,14 @@ export default function ShareCharacterButton({
           {/* Detailed extra sections */}
           {isDetailed && classData && subclassData && (
             <>
-              {/* Class Details */}
+              {/* Subclass Details */}
               <div style={DIVIDER_STYLE} />
               <div>
-                <div style={{ fontSize: 10, fontWeight: 700, textTransform: "uppercase", letterSpacing: 2, color: "#818cf8", marginBottom: 8, textAlign: "center" }}>
-                  Class Details
+                <div style={{ fontSize: 10, fontWeight: 700, textTransform: "uppercase", letterSpacing: 2, color: "#818cf8", marginBottom: 6, textAlign: "center" }}>
+                  Subclass Details
                 </div>
-                <div style={{ display: "flex", gap: 6, marginBottom: 8 }}>
-                  <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", background: "rgba(99,102,241,0.1)", borderRadius: 8, padding: "7px 8px", textAlign: "center" }}>
-                    <div style={{ fontSize: 8, color: "#9ca3af", textTransform: "uppercase", letterSpacing: 1, marginBottom: 4, whiteSpace: "nowrap" }}>Hit Die</div>
-                    <div style={{ fontSize: 17, fontWeight: 700, color: "#a5b4fc" }}>{classData.hitDie}</div>
-                  </div>
-                  <div style={{ flex: 2, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", background: "rgba(99,102,241,0.1)", borderRadius: 8, padding: "7px 8px", textAlign: "center" }}>
-                    <div style={{ fontSize: 8, color: "#9ca3af", textTransform: "uppercase", letterSpacing: 1, marginBottom: 4, whiteSpace: "nowrap" }}>Primary Ability</div>
-                    <div style={{ fontSize: 13, fontWeight: 700, color: "#a5b4fc" }}>{classData.primaryAbility}</div>
-                  </div>
-                  <div style={{ flex: 2, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", background: "rgba(99,102,241,0.1)", borderRadius: 8, padding: "7px 8px", textAlign: "center" }}>
-                    <div style={{ fontSize: 8, color: "#9ca3af", textTransform: "uppercase", letterSpacing: 1, marginBottom: 4, whiteSpace: "nowrap" }}>Role</div>
-                    <div style={{ fontSize: 11, fontWeight: 700, color: "#a5b4fc", lineHeight: 1.3 }}>{classData.role}</div>
-                  </div>
+                <div style={{ fontSize: 11, color: "#d1d5db", lineHeight: 1.55, textAlign: "center" }}>
+                  {subclassData.synopsis}
                 </div>
               </div>
 
@@ -224,17 +213,6 @@ export default function ShareCharacterButton({
                     items={classData.proficiencies.skills.from}
                     chipStyle={{ bg: "rgba(55,65,81,0.5)", border: "rgba(75,85,99,0.3)", text: "#9ca3af" }}
                   />
-                </div>
-              </div>
-
-              {/* Subclass Details */}
-              <div style={DIVIDER_STYLE} />
-              <div>
-                <div style={{ fontSize: 10, fontWeight: 700, textTransform: "uppercase", letterSpacing: 2, color: "#818cf8", marginBottom: 6, textAlign: "center" }}>
-                  Subclass Details
-                </div>
-                <div style={{ fontSize: 11, color: "#d1d5db", lineHeight: 1.55, textAlign: "center" }}>
-                  {subclassData.synopsis}
                 </div>
               </div>
             </>
