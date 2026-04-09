@@ -173,28 +173,6 @@ export default function ShareCharacterButton({
           {/* Detailed extra sections */}
           {isDetailed && classData && subclassData && (
             <>
-              {/* Class Details */}
-              <div style={DIVIDER_STYLE} />
-              <div>
-                <div style={{ fontSize: 10, fontWeight: 700, textTransform: "uppercase", letterSpacing: 2, color: "#818cf8", marginBottom: 8, textAlign: "center" }}>
-                  Class Details
-                </div>
-                <div style={{ display: "flex", gap: 6, marginBottom: 8 }}>
-                  <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", background: "rgba(99,102,241,0.1)", borderRadius: 8, padding: "7px 8px", textAlign: "center" }}>
-                    <div style={{ fontSize: 8, color: "#9ca3af", textTransform: "uppercase", letterSpacing: 1, marginBottom: 4, whiteSpace: "nowrap" }}>Hit Die</div>
-                    <div style={{ fontSize: 17, fontWeight: 700, color: "#a5b4fc" }}>{classData.hitDie}</div>
-                  </div>
-                  <div style={{ flex: 2, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", background: "rgba(99,102,241,0.1)", borderRadius: 8, padding: "7px 8px", textAlign: "center" }}>
-                    <div style={{ fontSize: 8, color: "#9ca3af", textTransform: "uppercase", letterSpacing: 1, marginBottom: 4, whiteSpace: "nowrap" }}>Primary Ability</div>
-                    <div style={{ fontSize: 13, fontWeight: 700, color: "#a5b4fc" }}>{classData.primaryAbility}</div>
-                  </div>
-                  <div style={{ flex: 2, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", background: "rgba(99,102,241,0.1)", borderRadius: 8, padding: "7px 8px", textAlign: "center" }}>
-                    <div style={{ fontSize: 8, color: "#9ca3af", textTransform: "uppercase", letterSpacing: 1, marginBottom: 4, whiteSpace: "nowrap" }}>Role</div>
-                    <div style={{ fontSize: 11, fontWeight: 700, color: "#a5b4fc", lineHeight: 1.3 }}>{classData.role}</div>
-                  </div>
-                </div>
-              </div>
-
               {/* Proficiencies */}
               <div style={DIVIDER_STYLE} />
               <div>
