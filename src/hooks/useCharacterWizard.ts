@@ -97,13 +97,14 @@ export function useCharacterWizard() {
   };
 
   const filteredRaces = races.filter((r) => r.editions.includes(edition));
+  const filteredClasses = classes.filter((c) => c.editions.includes(edition));
   const filteredSubclasses = selectedClass
     ? subclasses.filter((s) => s.classId === selectedClass.id)
     : [];
 
   const sortedClasses = classSortMode === "reddit"
-    ? [...classes].sort((a, b) => tierOrder[classRankings[a.id] ?? "C"] - tierOrder[classRankings[b.id] ?? "C"])
-    : classes;
+    ? [...filteredClasses].sort((a, b) => tierOrder[classRankings[a.id] ?? "C"] - tierOrder[classRankings[b.id] ?? "C"])
+    : filteredClasses;
 
   const sortedSubclasses = subclassSortMode === "reddit"
     ? [...filteredSubclasses].sort((a, b) => tierOrder[subclassRankings[a.id] ?? "C"] - tierOrder[subclassRankings[b.id] ?? "C"])
