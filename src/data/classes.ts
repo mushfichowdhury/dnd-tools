@@ -18,6 +18,7 @@ export const classes: DndClass[] = [
       skills: { choose: 2, from: ["Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival"] },
     },
     source: "PHB",
+    editions: ["5e", "5.5e"],
   },
   {
     id: "bard",
@@ -36,6 +37,7 @@ export const classes: DndClass[] = [
       skills: { choose: 3, from: ["Acrobatics", "Animal Handling", "Arcana", "Athletics", "Deception", "History", "Insight", "Intimidation", "Investigation", "Medicine", "Nature", "Perception", "Performance", "Persuasion", "Religion", "Sleight of Hand", "Stealth", "Survival"] },
     },
     source: "PHB",
+    editions: ["5e", "5.5e"],
   },
   {
     id: "cleric",
@@ -54,6 +56,7 @@ export const classes: DndClass[] = [
       skills: { choose: 2, from: ["History", "Insight", "Medicine", "Persuasion", "Religion"] },
     },
     source: "PHB",
+    editions: ["5e", "5.5e"],
   },
   {
     id: "druid",
@@ -72,6 +75,7 @@ export const classes: DndClass[] = [
       skills: { choose: 2, from: ["Arcana", "Animal Handling", "Insight", "Medicine", "Nature", "Perception", "Religion", "Survival"] },
     },
     source: "PHB",
+    editions: ["5e", "5.5e"],
   },
   {
     id: "fighter",
@@ -90,6 +94,7 @@ export const classes: DndClass[] = [
       skills: { choose: 2, from: ["Acrobatics", "Animal Handling", "Athletics", "History", "Insight", "Intimidation", "Perception", "Survival"] },
     },
     source: "PHB",
+    editions: ["5e", "5.5e"],
   },
   {
     id: "monk",
@@ -108,6 +113,7 @@ export const classes: DndClass[] = [
       skills: { choose: 2, from: ["Acrobatics", "Athletics", "History", "Insight", "Religion", "Stealth"] },
     },
     source: "PHB",
+    editions: ["5e", "5.5e"],
   },
   {
     id: "paladin",
@@ -126,6 +132,7 @@ export const classes: DndClass[] = [
       skills: { choose: 2, from: ["Athletics", "Insight", "Intimidation", "Medicine", "Persuasion", "Religion"] },
     },
     source: "PHB",
+    editions: ["5e", "5.5e"],
   },
   {
     id: "ranger",
@@ -144,6 +151,7 @@ export const classes: DndClass[] = [
       skills: { choose: 3, from: ["Animal Handling", "Athletics", "Insight", "Investigation", "Nature", "Perception", "Stealth", "Survival"] },
     },
     source: "PHB",
+    editions: ["5e", "5.5e"],
   },
   {
     id: "rogue",
@@ -162,6 +170,7 @@ export const classes: DndClass[] = [
       skills: { choose: 4, from: ["Acrobatics", "Athletics", "Deception", "Insight", "Intimidation", "Investigation", "Perception", "Performance", "Persuasion", "Sleight of Hand", "Stealth"] },
     },
     source: "PHB",
+    editions: ["5e", "5.5e"],
   },
   {
     id: "sorcerer",
@@ -180,6 +189,7 @@ export const classes: DndClass[] = [
       skills: { choose: 2, from: ["Arcana", "Deception", "Insight", "Intimidation", "Persuasion", "Religion"] },
     },
     source: "PHB",
+    editions: ["5e", "5.5e"],
   },
   {
     id: "warlock",
@@ -198,6 +208,7 @@ export const classes: DndClass[] = [
       skills: { choose: 2, from: ["Arcana", "Deception", "History", "Intimidation", "Investigation", "Nature", "Religion"] },
     },
     source: "PHB",
+    editions: ["5e", "5.5e"],
   },
   {
     id: "wizard",
@@ -216,6 +227,7 @@ export const classes: DndClass[] = [
       skills: { choose: 2, from: ["Arcana", "History", "Insight", "Investigation", "Medicine", "Religion"] },
     },
     source: "PHB",
+    editions: ["5e", "5.5e"],
   },
   {
     id: "artificer",
@@ -234,6 +246,7 @@ export const classes: DndClass[] = [
       skills: { choose: 2, from: ["Arcana", "History", "Investigation", "Medicine", "Nature", "Perception", "Sleight of Hand"] },
     },
     source: "Tasha's Cauldron",
+    editions: ["5e"],
   },
 
   // ========== 3RD PARTY CLASSES ==========
@@ -254,6 +267,7 @@ export const classes: DndClass[] = [
       skills: { choose: 3, from: ["Acrobatics", "Arcana", "Athletics", "History", "Insight", "Investigation", "Religion", "Survival"] },
     },
     source: "Critical Role",
+    editions: ["5e"],
   },
   {
     id: "illrigger",
@@ -272,5 +286,6 @@ export const classes: DndClass[] = [
       skills: { choose: 2, from: ["Athletics", "Deception", "Insight", "Intimidation", "Persuasion", "Religion"] },
     },
     source: "MCDM",
+    editions: ["5e"],
   },
 ];

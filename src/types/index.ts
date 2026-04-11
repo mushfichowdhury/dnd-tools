@@ -76,6 +76,7 @@ export interface DndClass {
   role: string;
   proficiencies: ClassProficiencies;
   source: Source;
+  editions: Edition[];
 }
 
 export interface SubclassFeature {
