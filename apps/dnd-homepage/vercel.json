@@ -1,0 +1,23 @@
+{
+  "framework": "nextjs",
+  "installCommand": "cd ../.. && npm install",
+  "buildCommand": "cd ../.. && npx turbo run build --filter=./apps/dnd-homepage",
+  "rewrites": [
+    {
+      "source": "/dnd-beginner-guide/:path*",
+      "destination": "https://dnd-beginner-guide.vercel.app/:path*"
+    },
+    {
+      "source": "/dnd-combat-tracker/:path*",
+      "destination": "https://dnd-combat-tracker.vercel.app/:path*"
+    },
+    {
+      "source": "/dnd-spell-archive/:path*",
+      "destination": "https://dnd-spell-archive.vercel.app/:path*"
+    },
+    {
+      "source": "/dnd-enemy-hoard-generator/:path*",
+      "destination": "https://dnd-enemy-hoard-generator.vercel.app/:path*"
+    }
+  ]
+}
