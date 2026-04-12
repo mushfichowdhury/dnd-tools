@@ -1,0 +1,18 @@
+import { Tier } from "@/data/rankings";
+
+const tierColors: Record<Tier, string> = {
+  S: "bg-yellow-500/20 text-yellow-300 border-yellow-500/40",
+  A: "bg-green-500/20 text-green-300 border-green-500/40",
+  B: "bg-blue-500/20 text-blue-300 border-blue-500/40",
+  C: "bg-gray-500/20 text-gray-400 border-gray-500/40",
+};
+
+export default function TierBadge({ tier }: { tier: Tier }) {
+  return (
+    <span
+      className={`inline-flex items-center justify-center rounded-full border px-2 py-0.5 text-xs font-bold whitespace-nowrap ${tierColors[tier]}`}
+    >
+      {tier}-Tier
+    </span>
+  );
+}

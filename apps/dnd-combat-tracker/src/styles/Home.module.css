@@ -1,0 +1,1261 @@
+.page {
+	min-height: 100vh;
+	background: radial-gradient(circle at top, #3f2f24, #1a130b 70%);
+	padding: 32px;
+	display: flex;
+	justify-content: center;
+	font-family: var(--font-geist-sans, "Inter", system-ui);
+	color: #f6efe3;
+}
+
+.main {
+	width: 100%;
+	max-width: 1100px;
+	background: rgba(47, 34, 23, 0.92);
+	backdrop-filter: blur(12px);
+	border-radius: 24px;
+	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+	padding: 48px clamp(24px, 5vw, 56px);
+	display: flex;
+	flex-direction: column;
+	gap: 48px;
+}
+
+.header {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.headerTop {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 16px;
+}
+
+.header h1 {
+	font-size: clamp(2.4rem, 4vw, 3rem);
+	font-weight: 700;
+	letter-spacing: -1px;
+	margin: 0;
+	color: #e0b970;
+}
+
+.header p {
+	margin: 0;
+	line-height: 1.6;
+	color: rgba(246, 239, 227, 0.85);
+}
+
+.themeToggle {
+	border-radius: 999px;
+	border: 1px solid rgba(224, 185, 112, 0.35);
+	background: rgba(36, 25, 16, 0.6);
+	color: #f6efe3;
+	font-weight: 600;
+	padding: 10px 18px;
+	cursor: pointer;
+	position: fixed;
+	top: 24px;
+	right: 32px;
+	z-index: 20;
+	transition: border-color 0.2s ease, transform 0.2s ease,
+		box-shadow 0.2s ease;
+	box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+}
+
+.themeToggle:hover,
+.themeToggle:focus-visible {
+	border-color: #d4a373;
+	transform: translateY(-1px);
+}
+
+.section {
+	background: rgba(55, 40, 27, 0.85);
+	border-radius: 20px;
+	padding: clamp(24px, 4vw, 36px);
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+	border: 1px solid rgba(224, 185, 112, 0.18);
+}
+
+.sectionColumns {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	gap: clamp(24px, 5vw, 40px);
+}
+
+.section h2 {
+	margin: 0;
+	font-size: clamp(1.6rem, 3vw, 2rem);
+	color: #f6efe3;
+}
+
+.sectionDescription {
+	margin: 0;
+	color: rgba(246, 239, 227, 0.7);
+	line-height: 1.5;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.importBox {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	background: rgba(43, 31, 20, 0.8);
+	border: 1px solid rgba(224, 185, 112, 0.2);
+	border-radius: 16px;
+	padding: 20px;
+}
+
+.importBox h3 {
+	margin: 0;
+	font-size: 1.1rem;
+	color: #f6efe3;
+}
+
+.helperText {
+	margin: 0;
+	color: rgba(246, 239, 227, 0.75);
+	line-height: 1.5;
+}
+
+.importForm {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	align-items: flex-start;
+}
+
+.importActions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+}
+
+.errorMessage {
+	margin: 0;
+	color: #f7b9b9;
+	font-size: 0.9rem;
+}
+
+.infoMessage {
+	margin: 0;
+	color: rgba(224, 203, 164, 0.95);
+	font-size: 0.9rem;
+}
+
+.formGrid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 20px;
+}
+
+.inputGroup {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	font-size: 0.95rem;
+	color: rgba(246, 239, 227, 0.9);
+}
+
+.inputGroup span {
+	font-weight: 600;
+}
+
+.inputGroup input,
+.inputGroup textarea {
+	border: 1px solid rgba(224, 185, 112, 0.35);
+	border-radius: 12px;
+	background: rgba(36, 25, 16, 0.7);
+	color: #f6efe3;
+	padding: 12px 14px;
+	font-size: 1rem;
+	outline: none;
+	transition: border-color 0.2s ease, transform 0.2s ease;
+	resize: vertical;
+}
+
+.inputGroup input:focus,
+.inputGroup textarea:focus {
+	border-color: #d4a373;
+	transform: translateY(-1px);
+}
+
+.monsterSearchContainer {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.monsterSearchDropdown {
+	position: absolute;
+	top: calc(100% + 6px);
+	left: 0;
+	right: 0;
+	background: rgba(36, 25, 16, 0.95);
+	border: 1px solid rgba(224, 185, 112, 0.3);
+	border-radius: 12px;
+	padding: 12px;
+	box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+	max-height: 280px;
+	overflow-y: auto;
+	z-index: 5;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.monsterSearchResults {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.monsterResultButton {
+	width: 100%;
+	text-align: left;
+	background: rgba(55, 40, 27, 0.7);
+	border: 1px solid transparent;
+	border-radius: 10px;
+	padding: 10px 12px;
+	color: inherit;
+	font: inherit;
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.monsterResultButton:hover,
+.monsterResultButton:focus-visible {
+	background: rgba(85, 60, 40, 0.9);
+	border-color: rgba(224, 185, 112, 0.5);
+	transform: translateY(-1px);
+	outline: none;
+}
+
+.monsterResultName {
+	font-weight: 600;
+	color: #f6efe3;
+}
+
+.monsterResultMeta {
+	font-size: 0.85rem;
+	color: rgba(246, 239, 227, 0.7);
+}
+
+.monsterSearchMessage {
+	margin: 0;
+	font-size: 0.9rem;
+	color: rgba(246, 239, 227, 0.75);
+}
+
+.monsterSearchError {
+	color: #f7b9b9;
+}
+
+.fieldset {
+	border: 1px dashed rgba(224, 185, 112, 0.45);
+	border-radius: 16px;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.fieldset legend {
+	padding: 0 8px;
+	font-weight: 600;
+	color: #e0b970;
+}
+
+.abilityScoreFields {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+	gap: 12px;
+}
+
+.actionList {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.actionItem {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	padding: 16px;
+	border-radius: 12px;
+	border: 1px solid rgba(224, 185, 112, 0.25);
+	background: rgba(36, 25, 16, 0.5);
+}
+
+.actionItem .secondaryButton {
+	align-self: flex-start;
+}
+
+.actionFooter {
+	display: flex;
+	gap: 12px;
+	flex-wrap: wrap;
+}
+
+.primaryButton,
+.secondaryButton {
+	align-self: flex-start;
+	padding: 10px 20px;
+	border-radius: 999px;
+	font-weight: 600;
+	font-size: 0.95rem;
+	cursor: pointer;
+	border: none;
+	transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.primaryButton {
+	background: linear-gradient(135deg, #b65c2c, #d4a373);
+	color: #fff8ed;
+	box-shadow: 0 10px 30px rgba(182, 92, 44, 0.35);
+}
+
+.primaryButton:disabled {
+	background: rgba(182, 92, 44, 0.3);
+	cursor: not-allowed;
+	box-shadow: none;
+}
+
+.secondaryButton {
+	background: rgba(118, 103, 78, 0.25);
+	color: #e0c8a0;
+	border: 1px solid rgba(224, 185, 112, 0.4);
+}
+
+.primaryButton:hover:not(:disabled),
+.secondaryButton:hover:not(:disabled) {
+	transform: translateY(-1px);
+	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+.cardList {
+	display: grid;
+	gap: 16px;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.card {
+	background: rgba(41, 29, 19, 0.9);
+	border-radius: 18px;
+	border: 1px solid rgba(224, 185, 112, 0.12);
+	padding: 20px;
+	display: grid;
+	gap: 12px;
+	align-items: start;
+}
+
+.card h3 {
+	margin: 0 0 4px;
+	font-size: 1.2rem;
+	color: #f6efe3;
+}
+
+.initiativeEditor {
+	margin-top: 8px;
+	max-width: 220px;
+}
+
+.initiativeInput {
+	width: 100%;
+}
+
+.sourceTag {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	margin: 6px 0 8px;
+	padding: 4px 10px;
+	border-radius: 999px;
+	background: rgba(224, 185, 112, 0.15);
+	color: #f3d8aa;
+	font-size: 0.75rem;
+	font-weight: 600;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
+.tempHpNote {
+	color: #f2c57c;
+	font-weight: 600;
+	font-size: 0.9rem;
+	align-self: flex-end;
+}
+
+.cardHeader {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.cardBrow {
+	display: flex;
+	justify-content: space-between;
+}
+
+.statSummary {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	color: rgba(246, 239, 227, 0.85);
+}
+
+.statSummary span {
+	font-weight: 600;
+	color: #d4a373;
+}
+
+.statLine {
+	margin: 0;
+	color: rgba(246, 239, 227, 0.75);
+	font-size: 0.95rem;
+	margin-bottom: 4px;
+}
+
+.enemyDetails {
+	margin-top: 12px;
+}
+
+.enemyDetails > summary {
+	cursor: pointer;
+	font-weight: 600;
+	color: #f2c57c;
+	list-style: none;
+	outline: none;
+}
+
+.enemyDetails[open] > summary {
+	margin-bottom: 12px;
+}
+
+.enemyDetails > summary::-webkit-details-marker {
+	display: none;
+}
+
+.enemyDetails > summary::before {
+	content: "▸";
+	display: inline-block;
+	margin-right: 8px;
+	transition: transform 0.2s ease;
+}
+
+.enemyDetails[open] > summary::before {
+	transform: rotate(90deg);
+}
+
+.statBlock {
+	grid-column: 1 / -1;
+	display: grid;
+	gap: 8px;
+	color: rgba(246, 239, 227, 0.85);
+}
+
+.statBlock span {
+	font-weight: 600;
+	color: #d4a373;
+}
+
+.abilityScoreList {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+	gap: 8px;
+	margin-top: 8px;
+}
+
+.abilityScoreListItem {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	align-items: center;
+	padding: 8px 10px;
+	border-radius: 10px;
+	background: rgba(36, 25, 16, 0.6);
+	border: 1px solid rgba(224, 185, 112, 0.25);
+}
+
+.abilityScoreListItem span {
+	font-size: 0.75rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: #d4a373;
+}
+
+.abilityScoreListItem strong {
+	font-size: 1.05rem;
+	color: #f6efe3;
+}
+
+.notes {
+	margin: 0;
+	font-style: italic;
+	color: rgba(246, 239, 227, 0.7);
+}
+
+.attackList h4 {
+	margin: 8px 0 4px;
+	font-size: 1rem;
+	color: #f6efe3;
+}
+
+.attackList ul {
+	list-style: disc;
+	margin: 0 0 0 20px;
+	padding: 0;
+	display: grid;
+	gap: 4px;
+}
+
+.attackList li {
+	color: rgba(246, 239, 227, 0.85);
+	line-height: 1.4;
+}
+
+.attackList li strong {
+	display: block;
+	color: #f6efe3;
+}
+
+.attackList li p {
+	margin: 4px 0 0;
+	color: rgba(246, 239, 227, 0.75);
+}
+
+.removeButton {
+	justify-self: end;
+	background: transparent;
+	border: 1px solid rgba(224, 141, 94, 0.6);
+	color: #e07a5f;
+	padding: 6px 14px;
+	border-radius: 999px;
+	cursor: pointer;
+	font-weight: 600;
+	transition: background 0.2s ease, color 0.2s ease;
+}
+
+.removeButton:hover {
+	background: rgba(224, 141, 94, 0.15);
+	color: #f2a97e;
+}
+
+.inlineList {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	gap: 6px;
+	color: rgba(246, 239, 227, 0.8);
+}
+
+.inlineList li {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	align-items: center;
+	background: rgba(49, 36, 24, 0.8);
+	padding: 8px 12px;
+	border-radius: 12px;
+}
+
+.removeLink {
+	background: none;
+	border: none;
+	color: #e07a5f;
+	cursor: pointer;
+	font-weight: 600;
+	padding: 0;
+	text-decoration: underline;
+}
+
+.removeLink:hover {
+	color: #f2a97e;
+}
+
+.combatControls {
+	display: flex;
+	gap: 12px;
+}
+
+.roundTracker {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	font-weight: 600;
+	color: #e0b970;
+	background: rgba(224, 185, 112, 0.12);
+	border: 1px solid rgba(224, 185, 112, 0.25);
+	border-radius: 12px;
+	padding: 6px 12px;
+	width: fit-content;
+}
+
+.concentrationReminder {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	background: rgba(212, 163, 115, 0.12);
+	border: 1px solid rgba(224, 185, 112, 0.4);
+	border-radius: 14px;
+	padding: 12px 16px;
+	color: #f6efe3;
+}
+
+.concentrationReminderContent {
+	line-height: 1.4;
+}
+
+.reminderDismiss {
+	border: 1px solid rgba(224, 185, 112, 0.4);
+	border-radius: 10px;
+	background: rgba(224, 185, 112, 0.16);
+	color: #e0b970;
+	font-weight: 600;
+	padding: 6px 12px;
+	cursor: pointer;
+	transition: border-color 0.2s ease, background-color 0.2s ease,
+		transform 0.2s ease;
+}
+
+.reminderDismiss:hover,
+.reminderDismiss:focus-visible {
+	border-color: #d4a373;
+	background: rgba(224, 185, 112, 0.28);
+	transform: translateY(-1px);
+	outline: none;
+}
+
+.emptyState {
+	margin: 0;
+	color: rgba(246, 239, 227, 0.7);
+	font-style: italic;
+}
+
+.combatList {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	gap: 12px;
+}
+
+.combatant {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	background: rgba(43, 31, 21, 0.85);
+	border-radius: 16px;
+	padding: 16px 20px;
+	border: 1px solid transparent;
+	transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.combatantContent {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 16px;
+}
+
+.combatantInfo {
+	flex: 1 1 auto;
+	min-width: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.statusSection {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+}
+
+.statusLabelText {
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	font-weight: 600;
+	font-size: 0.75rem;
+	color: rgba(246, 239, 227, 0.7);
+}
+
+.statusSelect {
+	border: 1px solid rgba(224, 185, 112, 0.3);
+	border-radius: 10px;
+	background: rgba(36, 25, 16, 0.55);
+	color: #f6efe3;
+	padding: 6px 12px;
+	font-size: 0.9rem;
+	font-weight: 600;
+	outline: none;
+	transition: border-color 0.2s ease, transform 0.2s ease;
+	min-width: 160px;
+	max-width: 200px;
+}
+
+.statusSelect:focus {
+	border-color: #d4a373;
+	transform: translateY(-1px);
+}
+
+.statusBadge {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 0.7rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: #e0b970;
+	background: rgba(224, 185, 112, 0.18);
+	border: 1px solid rgba(224, 185, 112, 0.3);
+	border-radius: 999px;
+	padding: 4px 10px;
+	white-space: nowrap;
+}
+
+.changeStatusButton {
+	border: 1px solid rgba(224, 185, 112, 0.35);
+	border-radius: 8px;
+	background: rgba(212, 163, 115, 0.12);
+	color: #e0b970;
+	font-size: 0.8rem;
+	font-weight: 600;
+	padding: 6px 12px;
+	cursor: pointer;
+	transition: border-color 0.2s ease, background-color 0.2s ease,
+		transform 0.2s ease;
+}
+
+.changeStatusButton:hover,
+.changeStatusButton:focus-visible {
+	border-color: #d4a373;
+	background: rgba(212, 163, 115, 0.22);
+	transform: translateY(-1px);
+	outline: none;
+}
+
+.concentrationToggle {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	font-size: 0.9rem;
+	font-weight: 600;
+	color: #f6efe3;
+}
+
+.concentrationToggleInput {
+	width: 18px;
+	height: 18px;
+	accent-color: #d4a373;
+	cursor: pointer;
+}
+
+.combatantVitals {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	align-self: center;
+	gap: 6px;
+}
+
+.combatant h3 {
+	margin: 0;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	font-size: 1.15rem;
+}
+
+.currentHp {
+	display: flex;
+	align-items: baseline;
+	gap: 6px;
+	font-weight: 600;
+}
+
+.currentHpLabel {
+	font-size: 0.8rem;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	color: rgba(246, 239, 227, 0.6);
+}
+
+.currentHpValue {
+	font-size: 1.6rem;
+	color: #f6efe3;
+	line-height: 1;
+}
+
+.enemyHpInput {
+	width: 90px;
+	border: 1px solid rgba(224, 185, 112, 0.35);
+	border-radius: 10px;
+	background: rgba(36, 25, 16, 0.7);
+	color: #f6efe3;
+	padding: 8px 12px;
+	font-size: 1rem;
+	font-weight: 600;
+	text-align: right;
+	outline: none;
+	transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.enemyHpInput:focus {
+	border-color: #d4a373;
+	transform: translateY(-1px);
+}
+
+.enemyDamageForm {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.enemyDamageInput {
+	width: 70px;
+	border: 1px solid rgba(224, 185, 112, 0.35);
+	border-radius: 8px;
+	background: rgba(36, 25, 16, 0.7);
+	color: #f6efe3;
+	padding: 6px 10px;
+	font-size: 0.9rem;
+	font-weight: 600;
+	text-align: right;
+	outline: none;
+	transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.enemyDamageInput:focus {
+	border-color: #d4a373;
+	transform: translateY(-1px);
+}
+
+.enemyDamageButton {
+	border: 1px solid rgba(224, 185, 112, 0.35);
+	border-radius: 8px;
+	background: rgba(212, 163, 115, 0.15);
+	color: #e0b970;
+	font-size: 0.75rem;
+	font-weight: 600;
+	padding: 6px 10px;
+	cursor: pointer;
+	transition: border-color 0.2s ease, background-color 0.2s ease,
+		transform 0.2s ease;
+}
+
+.enemyDamageButton:hover,
+.enemyDamageButton:focus-visible {
+	border-color: #d4a373;
+	background: rgba(212, 163, 115, 0.25);
+	transform: translateY(-1px);
+	outline: none;
+}
+
+.currentHpMax {
+	font-size: 0.95rem;
+	color: rgba(246, 239, 227, 0.7);
+}
+
+.lowHp {
+	color: #ff6b6b;
+}
+
+.tag {
+	background: rgba(212, 163, 115, 0.2);
+	border-radius: 999px;
+	padding: 2px 10px;
+	font-size: 0.8rem;
+	color: #e0b970;
+	font-weight: 600;
+}
+
+.combatantDetails {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	font-size: 0.9rem;
+	color: rgba(246, 239, 227, 0.75);
+}
+
+.enemyNotes {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	flex-basis: 100%;
+}
+
+.enemyNotesText {
+	white-space: pre-line;
+}
+
+.expandNotesButton {
+	align-self: flex-start;
+	background: none;
+	border: none;
+	color: #e0b970;
+	font-size: 0.85rem;
+	font-weight: 600;
+	padding: 0;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.expandNotesButton:hover {
+	color: #f2d79b;
+}
+
+.activeCombatant {
+	border-color: rgba(212, 163, 115, 0.7);
+	transform: translateY(-2px);
+	box-shadow: 0 12px 28px rgba(212, 163, 115, 0.25);
+}
+
+@media (max-width: 768px) {
+	.page {
+		padding: 16px;
+	}
+
+	.main {
+		padding: 32px 18px;
+		gap: 36px;
+	}
+
+	.section {
+		padding: 20px;
+	}
+
+	.sectionColumns {
+		grid-template-columns: 1fr;
+		gap: 24px;
+	}
+
+	.combatControls {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.primaryButton,
+	.secondaryButton {
+		width: 100%;
+	}
+
+	.combatantContent {
+		flex-direction: column;
+		align-items: stretch;
+		gap: 12px;
+	}
+
+	.combatant h3 {
+		flex-wrap: wrap;
+		gap: 6px;
+	}
+
+	.combatantMeta {
+		align-items: flex-start;
+	}
+
+	.currentHp {
+		flex-wrap: wrap;
+		justify-content: space-between;
+		gap: 10px;
+		width: 100%;
+	}
+
+	.combatantVitals {
+		width: 100%;
+		align-items: stretch;
+		align-self: stretch;
+		gap: 12px;
+	}
+
+	.currentHpValue {
+		font-size: 1.4rem;
+	}
+
+	.currentHpMax {
+		font-size: 0.85rem;
+	}
+
+	.tempHpNote {
+		align-self: flex-start;
+	}
+
+	.enemyDamageForm {
+		width: 100%;
+	}
+
+	.enemyHpInput {
+		width: 100%;
+		text-align: right;
+		flex: 1;
+		min-width: 0;
+	}
+
+	.enemyDamageInput {
+		flex: 1;
+		min-width: 0;
+	}
+}
+
+@media (max-width: 768px) {
+	.concentrationReminder {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.combatControls {
+		flex-wrap: wrap;
+	}
+
+	.headerTop {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.themeToggle {
+		width: auto;
+		text-align: center;
+		top: 16px;
+		right: 16px;
+	}
+}
+
+:global([data-theme="light"]) .page {
+	background: radial-gradient(circle at top, #f6efe3, #d6c3a1 70%);
+	color: #2b1b0f;
+}
+
+:global([data-theme="light"]) .header h1 {
+	color: #2b1b0f;
+}
+
+:global([data-theme="light"]) .header p {
+	color: #3a2415;
+}
+
+:global([data-theme="light"]) .main {
+	background: rgba(255, 252, 245, 0.9);
+	box-shadow: 0 20px 60px rgba(58, 42, 26, 0.12);
+}
+
+:global([data-theme="light"]) .section {
+	background: rgba(255, 252, 245, 0.85);
+	border-color: rgba(141, 109, 60, 0.15);
+}
+
+:global([data-theme="light"]) .section h2 {
+	color: #2b1b0f;
+}
+
+:global([data-theme="light"]) .card {
+	background: rgba(255, 252, 245, 0.92);
+	border-color: rgba(141, 109, 60, 0.2);
+}
+
+:global([data-theme="light"]) .card h3 {
+	color: #2b1b0f;
+}
+
+:global([data-theme="light"]) .combatant {
+	background: rgba(255, 252, 245, 0.9);
+}
+
+:global([data-theme="light"]) .combatant h3 {
+	color: #2b1b0f;
+}
+
+:global([data-theme="light"]) .statSummary {
+	color: #3a2415;
+}
+
+:global([data-theme="light"]) .statSummary span {
+	color: #7a3112;
+}
+
+:global([data-theme="light"]) .statBlock {
+	color: #3a2415;
+}
+
+:global([data-theme="light"]) .statBlock span {
+	color: #7a3112;
+}
+
+:global([data-theme="light"]) .abilityScoreListItem {
+	border-color: rgba(141, 109, 60, 0.35);
+}
+
+:global([data-theme="light"]) .abilityScoreListItem span {
+	color: #7a3112;
+}
+
+:global([data-theme="light"]) .abilityScoreListItem strong {
+	color: #2b1b0f;
+}
+
+:global([data-theme="light"]) .statusLabelText {
+	color: #5a3a24;
+}
+
+:global([data-theme="light"]) .currentHpLabel {
+	color: #5a3a24;
+}
+
+:global([data-theme="light"]) .currentHpValue {
+	color: #2b1b0f;
+}
+
+:global([data-theme="light"]) .statLine,
+:global([data-theme="light"]) .sectionDescription,
+:global([data-theme="light"]) .notes,
+:global([data-theme="light"]) .combatantDetails,
+:global([data-theme="light"]) .emptyState {
+	color: #3a2415;
+}
+
+:global([data-theme="light"]) .themeToggle {
+	background: rgba(255, 252, 245, 0.9);
+	color: #2b1b0f;
+	border-color: rgba(141, 109, 60, 0.35);
+	box-shadow: 0 10px 24px rgba(58, 42, 26, 0.15);
+}
+
+:global([data-theme="light"]) .themeToggle:hover,
+:global([data-theme="light"]) .themeToggle:focus-visible {
+	border-color: rgba(182, 92, 44, 0.55);
+}
+
+:global([data-theme="light"]) .primaryButton {
+	box-shadow: 0 10px 30px rgba(182, 92, 44, 0.2);
+}
+
+:global([data-theme="light"]) .removeButton {
+	color: #7a3112;
+	border-color: rgba(182, 92, 44, 0.35);
+}
+
+:global([data-theme="light"]) .removeButton:hover {
+	background: rgba(182, 92, 44, 0.08);
+	color: #5c260f;
+}
+
+:global([data-theme="light"]) .removeLink {
+	color: #7a3112;
+}
+
+:global([data-theme="light"]) .removeLink:hover {
+	color: #5c260f;
+}
+
+:global([data-theme="light"]) .enemyHpInput {
+	background: rgba(255, 252, 245, 0.9);
+	color: #3a2a1a;
+	border-color: rgba(141, 109, 60, 0.25);
+}
+
+:global([data-theme="light"]) .enemyHpInput:focus {
+	border-color: #b65c2c;
+}
+
+:global([data-theme="light"]) .expandNotesButton {
+	color: #b65c2c;
+}
+
+:global([data-theme="light"]) .expandNotesButton:hover {
+	color: #7c3f1e;
+}
+
+:global([data-theme="light"]) .enemyDamageInput {
+	background: rgba(255, 252, 245, 0.85);
+	color: #3a2a1a;
+	border-color: rgba(141, 109, 60, 0.35);
+}
+
+:global([data-theme="light"]) .enemyDamageInput:focus {
+	border-color: rgba(141, 109, 60, 0.55);
+}
+
+:global([data-theme="light"]) .enemyDamageButton {
+	border-color: rgba(141, 109, 60, 0.35);
+	background: rgba(212, 163, 115, 0.18);
+	color: #5a2a12;
+}
+
+:global([data-theme="light"]) .enemyDamageButton:hover,
+:global([data-theme="light"]) .enemyDamageButton:focus-visible {
+	border-color: rgba(141, 109, 60, 0.55);
+	background: rgba(212, 163, 115, 0.28);
+}
+
+:global([data-theme="light"]) .roundTracker {
+	color: #5a2a12;
+	background: rgba(182, 92, 44, 0.12);
+	border-color: rgba(182, 92, 44, 0.25);
+}
+
+:global([data-theme="light"]) .concentrationReminder {
+	background: rgba(212, 163, 115, 0.18);
+	border-color: rgba(182, 92, 44, 0.3);
+	color: #3a2a1a;
+}
+
+:global([data-theme="light"]) .reminderDismiss {
+	border-color: rgba(182, 92, 44, 0.35);
+	background: rgba(212, 163, 115, 0.2);
+	color: #5a2a12;
+}
+
+:global([data-theme="light"]) .reminderDismiss:hover,
+:global([data-theme="light"]) .reminderDismiss:focus-visible {
+	border-color: rgba(182, 92, 44, 0.55);
+	background: rgba(212, 163, 115, 0.32);
+}
+
+:global([data-theme="light"]) .statusSelect {
+	background: rgba(255, 252, 245, 0.9);
+	color: #3a2a1a;
+	border-color: rgba(141, 109, 60, 0.35);
+}
+
+:global([data-theme="light"]) .statusSelect:focus {
+	border-color: rgba(141, 109, 60, 0.55);
+}
+
+:global([data-theme="light"]) .statusBadge {
+	color: #5a2a12;
+	background: rgba(182, 92, 44, 0.16);
+	border-color: rgba(182, 92, 44, 0.35);
+}
+
+.lineBreak {
+	border: 0;
+	border-top: 2px solid #d6c3a1;
+}
+
+.elipsesBreak {
+	align-self: center;
+	color: #d6c3a1;
+}
