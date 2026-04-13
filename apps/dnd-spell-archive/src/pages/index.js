@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { Geist, Geist_Mono } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import { useState, useEffect } from "react";
@@ -32,6 +33,7 @@ const geistMono = Geist_Mono({
 });
 
 export default function Home() {
+	const router = useRouter();
 	const [spells, setSpells] = useState([]);
 	const [filteredSpells, setFilteredSpells] = useState([]);
 	const [loading, setLoading] = useState(true);
@@ -154,7 +156,7 @@ export default function Home() {
 					content='D&D 5e Spells Library with search and filters'
 				/>
 				<meta name='viewport' content='width=device-width, initial-scale=1' />
-				<link rel='icon' href='/favicon.ico' />
+				<link rel='icon' href={`${router.basePath}/favicon.ico`} />
 			</Head>
 			<div
 				className={`${styles.page} ${geistSans.variable} ${geistMono.variable}`}>
