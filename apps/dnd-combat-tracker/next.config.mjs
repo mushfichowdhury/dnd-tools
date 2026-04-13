@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
+  basePath: "/dnd-combat-tracker",
   reactStrictMode: true,
 };
 

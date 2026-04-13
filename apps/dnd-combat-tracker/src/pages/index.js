@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { useRouter } from "next/router";
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
 import { ABILITY_SCORE_CONFIG } from "@/lib/combatFormatting";
@@ -510,6 +511,7 @@ const buildStatusFromCharacterConditions = (conditions) => {
 };
 
 export default function Home() {
+	const router = useRouter();
 	const [theme, setTheme] = useState("dark");
 	const [partyMembers, setPartyMembers] = useState([]);
 	const [enemies, setEnemies] = useState([]);
@@ -561,7 +563,7 @@ export default function Home() {
 		const timeoutId = setTimeout(async () => {
 			try {
 				const response = await fetch(
-					`/api/monsters?query=${encodeURIComponent(searchTerm)}`
+					`${router.basePath}/api/monsters?query=${encodeURIComponent(searchTerm)}`
 				);
 
 				if (!isActive) {
@@ -834,7 +836,7 @@ export default function Home() {
 		setIsImportingDndBeyond(true);
 
 		try {
-			const response = await fetch("/api/import-dndbeyond", {
+			const response = await fetch(`${router.basePath}/api/import-dndbeyond`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
@@ -918,7 +920,7 @@ export default function Home() {
 		setIsImportingDndBeyond(true);
 
 		try {
-			const response = await fetch("/api/import-dndbeyond-campaign", {
+			const response = await fetch(`${router.basePath}/api/import-dndbeyond-campaign`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
@@ -1487,7 +1489,7 @@ export default function Home() {
                         const updates = [];
 
                         for (const member of dndBeyondMembers) {
-                                const response = await fetch("/api/import-dndbeyond", {
+                                const response = await fetch(`${router.basePath}/api/import-dndbeyond`, {
                                         method: "POST",
 					headers: {
 						"Content-Type": "application/json",
